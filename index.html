@@ -90,6 +90,8 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 	<!-- else if (hour >= 0 && hour < 7) {document.getElementById("contArea").innerHTML = '<img src="img/son.png" alt="" />';}; -->
 <!-- </script> -->
 <body>
+
+
 <div class="tl_page_wrap">
 <div class="tl_page">
 <main class="tl_article tl_article_editable">
@@ -237,17 +239,44 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 	<li><a class="tooltipl" href="https://bbb.ssau.ru/b/ezv-uf2-ffq" target="_blank">Метрология<span><img src="img/sleep4.png"/></span></a></li>
 </ol>
 </details>
-<!-- <details class="details1"><summary>Плейлисты</summary><p hidden id="plst" class="hide"></p> -->
-<!-- <ol dir="auto"> -->
-	<!-- <li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj" target="_blank">математика<span><img src="img/bush.png"/></span></a></li> -->
-	<!-- <li><a class="tooltipl" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inbbjqhzdgzAwxA3SzoKRNwN" target="_blank">аналоговые электронные уродства<span><img src="img/sleep6.png"/></span></a></li> -->
-	<!-- <li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inajKVKEpch58Z5g7S94v9aa" target="_blank">системы компьютерного пиздяу<span><img src="img/sleep7.png"/></span></a></li> -->
-	<!-- <li><a class="tooltipl" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inb783lo2y2sb407PSCH4PGa" target="_blank">анализ сигналов и сосис<span><img src="img/sleep8.png"/></span></a></li> -->
-	<!-- <li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inYuxl02VKphnLu_z9-Q7OUQ" target="_blank">философия<span><img src="img/sleep9.png"/></span></a></li> -->
-	<!-- <li><a class="tooltipl" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inbP-UfYTX7ItI_rf7lEm9Zz" target="_blank">культурные основы<span><img src="img/sleep9.png"/></span></a></li> -->
-	<!-- <li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inZcQB_5vULGn8wqyzPHtNS0" target="_blank">биологические основы<span><img src="img/sleep9.png"/></span></a></li> -->
-<!-- </ol> -->
-<!-- </details> -->
+<details class="details1 input hidden-div"><summary>Плейлисты</summary>
+<ol dir="auto">
+	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj" target="_blank">математика<span><img src="img/bush.png"/></span></a></li>
+	<li><a class="tooltipl" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inbbjqhzdgzAwxA3SzoKRNwN" target="_blank">аналоговые электронные уродства<span><img src="img/sleep6.png"/></span></a></li>
+	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inajKVKEpch58Z5g7S94v9aa" target="_blank">системы компьютерного пиздяу<span><img src="img/sleep7.png"/></span></a></li>
+	<li><a class="tooltipl" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inb783lo2y2sb407PSCH4PGa" target="_blank">анализ сигналов и сосис<span><img src="img/sleep8.png"/></span></a></li>
+	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inYuxl02VKphnLu_z9-Q7OUQ" target="_blank">философия<span><img src="img/sleep9.png"/></span></a></li>
+	<li><a class="tooltipl" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inbP-UfYTX7ItI_rf7lEm9Zz" target="_blank">культурные основы<span><img src="img/sleep9.png"/></span></a></li>
+	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inZcQB_5vULGn8wqyzPHtNS0" target="_blank">биологические основы<span><img src="img/sleep9.png"/></span></a></li>
+</ol>
+</details>
+
+
+
+<!-- переключение cкрытых позиций -->
+<div class="form-group">
+    <div class="form-check">
+        <input type="checkbox"  id="chk">
+        <label class="form-check-label" for="chk"></label>
+    </div>
+</div>
+
+<script>
+document.getElementById('chk').onclick = function() {  
+if(document.getElementById('chk').checked) {
+	localStorage.setItem('chk', "true");document.querySelector('.input').classList.toggle('hidden-div');} 
+else {
+	localStorage.setItem('chk', "false");document.querySelector('.input').classList.toggle('hidden-div'); }}
+if (localStorage.getItem('chk') == "true") {
+document.getElementById("chk").setAttribute('checked','checked');
+document.querySelector('.input').classList.toggle('hidden-div');
+}
+
+</script>
+
+
+
+
 
 <h4 id="bomzhs"><a href="#contents">Биофизические основы живых систем</a></h4>
 <ul><li title="не говорите что Ананасович">Зайнулин Руслан Анасович<!--/a>, <a href="https://vk.me/id10928730" target="_blank">ВК</a>--></li>
@@ -365,7 +394,6 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 </ul>
 
 <details class="details1"><summary></summary></details>
-
 
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
