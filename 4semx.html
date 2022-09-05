@@ -1,0 +1,292 @@
+<!DOCTYPE html><html><head>
+<title>и снова Telegraph</title>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link type="text/css" rel="stylesheet" href="bioteh.css?v=9" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="MobileOptimized" content="176">
+<meta name="HandheldFriendly" content="True">
+<meta property="og:url" content="https://biokek.surge.sh/" />
+<meta property="og:image" content="https://telegra.ph/file/6e2eeb42bfb8bbc48166b.png" />
+<link rel="shortcut icon" href="/favicon.ico?1" type="image/x-icon">
+<link rel="icon" type="image/png" href="/images/favicon.png?1" sizes="16x16">
+<link rel="icon" type="image/png" href="/images/favicon_2x.png?1" sizes="32x32">
+</head>
+
+
+<table id="calendar2" class="hide-on-mobile">
+  <thead>
+    <tr><td>‹<td colspan="5"><td>>
+    <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+  <tbody>
+</table>
+<script>
+function Calendar2(id, year, month) {
+var Dlast = new Date(year,month+1,0).getDate(),
+    D = new Date(year,month,Dlast),
+    DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay(),
+    DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay(),
+    calendar = '<tr>',
+    month=["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+if (DNfirst != 0) {
+  for(var  i = 1; i < DNfirst; i++) calendar += '<td>';
+}else{
+  for(var  i = 0; i < 6; i++) calendar += '<td>';
+}
+for(var  i = 1; i <= Dlast; i++) {
+  if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
+    calendar += '<td class="today">' + i;
+  }else{
+    calendar += '<td>' + i;
+  }
+  if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
+    calendar += '<tr>';
+  }
+}
+for(var  i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
+document.querySelector('#'+id+' tbody').innerHTML = calendar;
+document.querySelector('#'+id+' thead td:nth-child(2)').innerHTML = month[D.getMonth()] +' '+ D.getFullYear();
+document.querySelector('#'+id+' thead td:nth-child(2)').dataset.month = D.getMonth();
+document.querySelector('#'+id+' thead td:nth-child(2)').dataset.year = D.getFullYear();
+if (document.querySelectorAll('#'+id+' tbody tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
+    document.querySelector('#'+id+' tbody').innerHTML += '<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;';
+}
+}
+Calendar2("calendar2", new Date().getFullYear(), new Date().getMonth());
+// переключатель минус месяц
+document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(1)').onclick = function() {
+  Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month)-1);
+}
+// переключатель плюс месяц
+document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function() {
+  Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month)+1);
+}
+</script>
+<!--div id="contArea"></div>
+<!--script>
+    day = new Date();
+    hour = day.getHours();
+    if (hour >= 7 && hour < 12) {document.getElementById("contArea").innerHTML = '<img src="https://biokek.surge.sh/son1.png" alt="" />';} 
+	else if (hour >= 12 && hour < 19) {document.getElementById("contArea").innerHTML = '<img src="https://biokek.surge.sh/son3.png" alt="" />';}
+	else if (hour >= 19 && hour < 24) {document.getElementById("contArea").innerHTML = '<img src="https://biokek.surge.sh/son.png" alt="" />';} 
+	else if (hour >= 0 && hour < 7) {document.getElementById("contArea").innerHTML = '<img src="https://biokek.surge.sh/son.png" alt="" />';};
+</script-->
+<body>
+<div class="tl_page_wrap">
+<div class="tl_page">
+<main class="tl_article tl_article_editable">
+
+<article id="_tl_editor" class="tl_article_content ql-container ql-disabled">
+<h2 id="datetime"></h2>
+<script>
+var d = new Date();
+var days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+document.getElementById("datetime").innerHTML = (days[d.getDay()]) + ", " + (d.toLocaleDateString());
+</script>
+
+<!-- <p id="mess" class="hide-on-mobile"><strong>про АУЕ на 16 неделе</strong><br>понедельник с 11:30<br class="inline"> -->
+<!-- 25 первый зачет, 1 июня второй для несдавших<br class="inline"> -->
+	<!-- <br class="inline"> -->
+<!-- <br class="inline"> -->
+<!-- <strong>про Буша</strong><br class="inline"> -->
+<!-- контрольная и дедлайн по бушевику 27  -->
+<!-- <br class="inline"> -->
+<!-- будет одна пара в 9:45 30-го -->
+<!-- <br class="inline"> -->
+<!-- и две пары с с 9:45 9 июня -->
+<!-- </p>  -->
+<p hidden class="hide">ссылка на сайт для браузера(можно нажать даже из этого окошка предпросмотра)- https://biokek.surge.sh/ &#8195;&#8195;&#8195;&#9745;максимально сексуально теперь&#9745;</p><p class="ass" style="font-size: 8pt">в статье появились котики(только для браузера)</p>
+
+
+
+
+
+<details class="details1"><summary title="(но старый механизм навигации работает - заголовки предметов вернут на развернутое оглавление)">Оглавление теперь сворачиваемое</summary><p hidden id="Оглавление">Оглавление</p><ol><li><a href="#%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0">Математика</a></li><li><a href="#%D0%90%D1%81%D0%B8%D1%81">Анализ сигналов и сосис</a></li><li><a href="#%D0%90%D0%A3%D0%95">Аналоговые электронные устройства</a></li><li><a href="#%D0%A1%D0%9A%D0%9F">Системы компьютерного проектирования</a></li><li><a href="#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-%D0%BF%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D1%8B">Основы профессиональной культуры</a></li><li><a href="#%D0%A4%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D1%8F">Философия</a></li><li><a href="#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-%D0%B1%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8">Основы биологии</a></li></ol></details>
+
+
+<details class="details1"><summary>немного букв о том, как жить</summary>
+<details class="details2"><summary style="font-size: 12pt; color: #008000">Важная информация o навигации</summary>
+<p>долго думал, как сделать, в итоге, придумал. Теперь по умолчанию спойлер с расписанием <strong>закрыт</strong>, но, если вы хотите при открытии, например, закладки в своем любимом браузере видеть сразу открытым наше чудесное
+	расписание, а не лестницу из спойлеров, добавьте в закладки не просто ссылку на сайт, а вот такую ссылку с якорем - <a href="https://biokek.surge.sh/#rasp" target="_blank">https://biokek.surge.sh/#rasp</a> - по ней сайт
+	будет открываться сразу с этим развернутым спойлером.
+	<br> Аналогичную закладку можно сделать для оглавления - <a href="https://biokek.surge.sh/#Оглавление" target="_blank"> https://biokek.surge.sh/#Оглавление</a>
+	<br>аналогично:
+	<br><a href="https://biokek.surge.sh/#bbb" target="_blank">https://biokek.surge.sh/#bbb</a>
+	<br><a href="https://biokek.surge.sh/#plst" target="_blank">https://biokek.surge.sh/#plst</a>
+	<br>в мобильных браузерах(всех, что я тестировал) - не работает нормально, фича чисто для пк</p>
+</details>
+<details class="details2">
+<summary style="font-size: 10pt;">больше не актуально - обновляется без вашего участия</summary>
+<p><i>Для гарантированного обновления информации в любом браузере на ПК хотя бы раз в день нажимаем<b> "Сtrl" + "F5"</b> и все будет хорошо. Особенно, если вы видите что-то явно некрасивое, большое и кривое.  Мобильные браузеры ни в какую не хотят обновлять скрипты и стили сайта, поэтому в один прекрасный момент он начинает выглядеть как говно. Нужно очистить кэш браузера либо в системных настройках, либо в настройках браузера, кому как удобно.</i></p>
+</details>
+<details class="details2">
+<summary style="font-size: 10pt;">про необновление встроенного в телеграм просмотра и его глюки</summary>
+<p>Про косяки встроенного просмотра в телеграм на iOS известно, с ними можно жить, или же просто использовать статью по <a href="https://biokek.surge.sh/">прямой ссылке</a> в Safari. Я честно не знаю, почему на яблоке такая хуйня.
+	На андроид и в любом браузере все адекватно отображается, код сайта вылизан, выдрочен, выплакан, но instant view на iOS все равно кривой.
+	<br>
+	<br><a href="https://t.me/iv?url=https%3A%2F%2Fbiokek.ucoz.net%2F&rhash=295abc8447a42b">это cсылка для встроенного просмотра</a> в телеграм на Android и iOS. Пока только по ней можно пользоваться сайтом прямо в телеграме, без
+	браузера. Не всегда обновляется сразу(а может и вообще никогда самостоятельно не обновляется - отследить это можно по заголовку, который динамически изменяется на текущий день недели и дату.). Решение - переотправить эту
+	ссылку для встроенного просмотра себе в избранное, например. В этот момент произойдет обновление. Делать это можно ежедневно.. Зато всегда под рукой будет. На iOS можно просто нажать не на саму кнопку "посмотреть", а на
+	ссылку. Тогда загрузится свежая версия
+	<br>
+	<br> Сразу вопрос, можно ли иначе? нет, пока нельзя. Мне необходимо на сайте создать 10 разных страниц(всего лишь, ну да), для каждой составить и проверить шаблон, по которому создается предпросмотр, после этого появится возможность
+	подать в телеграм заявку о том, что у меня есть пиздатый сайт и для него есть охуительный шаблон для создания предпросмотра, который обкатан и проверен на 10 страницах сайта, после чего, возможно, заявку одобрят(а могут
+	не одобрить) и предпросмотр будет создаваться автоматически(и обновляться без переотправки), по прямой ссылке <a href="https://biokek.surge.sh/">https://biokek.surge.sh/</a>, как было в вашем любимом телеграфе. Ну а пока,
+	кое-какие сложности есть, нет никаких сложностей в браузере.</p>
+</details>
+<p>Смена темы, возможность взаимодействия с вами, отвязка от облачных хранилищ, различные интеграции с сервисами вуза реализуемы, но требуют нормального платного хостинга(и времени). Автор предпочитает кушать и спать хотя бы иногда.
+<br></p></details>
+
+
+<details class="details1"><summary>Главная</summary>
+<ul><li><a href="https://ssau.ru/rasp?groupId=701791516" target="_blank">Актуальное расписание </a></li><li><a href="https://cabinet.ssau.ru/" target="_blank">Личный кабинет</a> + <a href="https://cabinet.ssau.ru/messenger" target="_blank">мессенджер вуза</a></li><li><a href="https://docs.google.com/spreadsheets/d/19Qt3RGx56tEb7Fl1_uTe-rbAttEfWUL8QvKc0Fg7KA4/htmlview#" target="_blank">расписание пересдач за третий семестр</a> + <a href="https://ssau.ru/kampussouth.png" target="_blank">Карта кампуса</a></li></ul>
+
+<details class="details2"><summary>Расписание сессии</summary><figure><img src="https://telegra.ph/file/42c52fc0f7f40a5f61dfe.png"></figure></details>
+<details class="details3"><summary>Прошлые статьи</summary><ul><li><a href="https://telegra.ph/01-01-01-12">1 семестр</a> + <a href="https://telegra.ph/6169-02-22">2 семестр</a></li><li><a href="https://telegra.ph/6269-09-24">3 семестр</a> + <a href="https://telegra.ph/4sem-04-01">4 семестр</a></li></ul></details><ul><li>если реклама на ютубе - устанавливаем <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=ru" target="_blank">расширение в браузер</a></li></ul>
+<details class="details1"><summary>Расписания</summary>
+<p hidden id="rasp" class="hide"></p>
+<details class="details2"><summary>Расписания прошедших недель</summary>
+<figure><img src="https://telegra.ph/file/d1f9dc42b2d1ccfa2e1c7.png"><figcaption>1</figcaption></figure>
+<figure><img src="https://telegra.ph/file/21e90bbb458aee36979c3.png"><figcaption>2</figcaption></figure>
+<figure><img src="https://telegra.ph/file/fb77036369c620a7a1823.png"><figcaption>3</figcaption></figure>
+<figure><img src="https://telegra.ph/file/fe30cf6fca920fb31d6f3.png"><figcaption>4</figcaption></figure>
+<figure><img src="https://telegra.ph/file/b0585b3b279955e520038.png"><figcaption>5</figcaption></figure>
+<figure><img src="https://telegra.ph/file/b46f9d3d68f67bf148e87.png"><figcaption>6</figcaption></figure>
+<figure><img src="https://telegra.ph/file/9f0c7bf9b95362db14a00.png"><figcaption>7</figcaption></figure>
+<figure><img src="https://telegra.ph/file/e387b7f15b2d27137dd6f.png"><figcaption>8</figcaption></figure>
+<figure><img src="https://telegra.ph/file/5cf4b7544674433ccd298.png"><figcaption>9</figcaption></figure>
+<figure><img src="https://telegra.ph/file/4caea631e54d337a83308.png"><figcaption>10</figcaption></figure>
+<figure><img src="https://telegra.ph/file/b34b321845225a7be7bee.png"><figcaption>11</figcaption></figure>
+<figure><img src="https://telegra.ph/file/609a34360183e1c25da12.png"><figcaption>12</figcaption></figure>
+<figure><img src="https://telegra.ph/file/7ae4ed22ddcff7da7d4e5.png"><figcaption>13</figcaption></figure>
+<figure><img src="https://telegra.ph/file/b1b637c8346425ba9d382.png"><figcaption>14</figcaption></figure>
+<figure><img src="https://telegra.ph/file/b39a7b603d1a9da66fddb.png"><figcaption>15</figcaption></figure>
+<figure><img src="https://telegra.ph/file/752a45c3ce9783837bfdc.png"><figcaption>16</figcaption></figure>
+<figure><img src="https://telegra.ph/file/33256789d03967951ab31.png"><figcaption>17</figcaption></figure>
+</details>
+<details class="details2"><summary>Расписания на следующие недели</summary>
+</details></details>
+</details>
+
+<details class="details1"><summary>Ссылки-на-bbb-лекций</summary>
+<p hidden id="bbb" class="hide"></p>
+<ol dir="auto">
+<li><a class="tooltip" href="https://bbb.ssau.ru/b/fd4-fkj-2mp" target="_blank">СКП электронных модулей<span><img src="https://biokek.surge.sh/sleep.png"/></span></a></li>
+<li><a class="tooltipl" href="https://bbb.ssau.ru/b/uxw-uyf-ezu" target="_blank">Асис<span><img src="https://biokek.surge.sh/sleep1.png"/></span></a></li>
+<li><a class="tooltip" href="https://bbb.ssau.ru/b/pjy-pmk-xe2" target="_blank">АУЕ<span><img src="https://biokek.surge.sh/sleep2.png"/></span></a></li>
+<li><a class="tooltipl" href="https://bbb.ssau.ru/b/jky-mpy-x4x" target="_blank">Основы профессиональной культуры<span><img src="https://biokek.surge.sh/sleep3.png"/></span></a></li>
+<li><a class="tooltip" href="https://bbb.ssau.ru/b/vty-ozw-hnt-0iq" target="_blank">Философия<span><img src="https://biokek.surge.sh/sleep5.png"/></span></a></li>
+<li><a class="tooltipl" href="https://bbb.ssau.ru/b/ezv-uf2-ffq" target="_blank">Основы биологии<span><img src="https://biokek.surge.sh/sleep4.png"/></span></a></li>
+</ol>
+</details>
+
+<details class="details1"><summary>Плейлисты</summary><p hidden id="plst" class="hide"></p>
+<ol dir="auto">
+<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj" target="_blank">математика<span><img src="https://biokek.surge.sh/bush.png"/></span></a></li>
+<li><a class="tooltipl" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inbbjqhzdgzAwxA3SzoKRNwN" target="_blank">аналоговые электронные уродства<span><img src="https://biokek.surge.sh/sleep6.png"/></span></a></li>
+<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inajKVKEpch58Z5g7S94v9aa" target="_blank">системы компьютерного пиздяу<span><img src="https://biokek.surge.sh/sleep7.png"/></span></a></li>
+<li><a class="tooltipl" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inb783lo2y2sb407PSCH4PGa" target="_blank">анализ сигналов и сосис<span><img src="https://biokek.surge.sh/sleep8.png"/></span></a></li>
+<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inYuxl02VKphnLu_z9-Q7OUQ" target="_blank">философия<span><img src="https://biokek.surge.sh/sleep9.png"/></span></a></li>
+<li><a class="tooltipl" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inbP-UfYTX7ItI_rf7lEm9Zz" target="_blank">культурные основы<span><img src="https://biokek.surge.sh/sleep9.png"/></span></a></li>
+<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inZcQB_5vULGn8wqyzPHtNS0" target="_blank">биологические основы<span><img src="https://biokek.surge.sh/sleep9.png"/></span></a></li>
+</ol>
+</details>
+<h4 id="Математика"><a href="#%D0%9E%D0%B3%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">Математика</a></h4>
+<ul><li>Бушков Станислав Владимирович - <a href="mailto:svbush@inbox.ru" title="объелся груш">svbush@inbox.ru</a>, <a href="https://vk.me/id10928730" target="_blank">ВК</a>, <a href="https://wa.me/79272029044" target="_blank">WhatsApp</a></li></ul>
+<details class="details1" title="какой же пиздец"><summary>Бушлекции</summary>
+<ul><li>Лекция 1 (10.02.2022):<a href="https://cloud.mail.ru/stock/cvZ54j48mGBdDSrSbUg35pm9" target="_blank">облако</a>+ <a href="https://www.youtube.com/watch?v=L2PdUVXmVmY&amp;list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj&amp;index=1" target="_blank">ютуб</a></li>
+<li>Лекция 2 (17.02.2022): <a href="https://cloud.mail.ru/stock/cvZ54j48mGBdDSrSbUg35pm9" target="_blank">облако</a>+ <a href="https://www.youtube.com/watch?v=pj1de2fpaW4&amp;list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj&amp;index=2" target="_blank">ютуб</a></li>
+<li>Лекция 3 (24.02.2022): <a href="https://cloud.mail.ru/stock/igL1HDZ4eUbapVVnkVzVe5bg" target="_blank">облако</a>+ <a href="https://www.youtube.com/watch?v=4oIQXvVtflc&amp;list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj&amp;index=3&amp;t=1s" target="_blank">бтуб</a></li>
+<li>Лекция 4 (03.03.2022): <a href="https://cloud.mail.ru/stock/itcdUejJaoqzep3qxTXe7XwF" target="_blank">облако </a>+ <a href="https://www.youtube.com/watch?v=M1LR-XkIeGY&amp;list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj&amp;index=4" target="_blank">ютуб</a></li>
+<li>Лекция 5 (10.03.2022): <a href="https://cloud.mail.ru/stock/itcdUejJaoqzep3qxTXe7XwF" target="_blank">облако </a>+ <a href="https://www.youtube.com/watch?v=W04QkTt19oA&amp;list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj&amp;index=5" target="_blank">ютуб</a></li>
+<li>Лекция 6 (17.03.2022): <a href="https://cloud.mail.ru/stock/jgvx2uoeaeg4rnZFuojwSaxw" target="_blank">облако</a>+ <a href="https://www.youtube.com/watch?v=Ll1KHIQE-nw&amp;list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj&amp;index=6" target="_blank">ютуб</a></li>
+<li>Лекция 7 (24.03.2022): <a href="https://cloud.mail.ru/stock/hpJXGxDquEucWAVoNUd13viR" target="_blank">облако</a>+ <a href="https://www.youtube.com/watch?v=E6FVqUCI1UA&amp;list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj&amp;index=7" target="_blank">ютуб</a></li>
+<li>Лекция 8 (31.03.2022): <a href="https://cloud.mail.ru/stock/3qNYZztoQ5gfdo2U5FjMx11X" target="_blank">облако</a>+<a href="https://www.youtube.com/watch?v=7frjzIX2Ww4&amp;list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj&amp;index=8" target="_blank">ютуб</a></li>
+<li>Лекция 9 (07.04.2022): <a href="https://cloud.mail.ru/stock/aQTp8UpW8JRUPqvmp2hC2uMR" target="_blank">облако</a>+<a href="https://www.youtube.com/watch?v=3nmvf6GnGZ8&list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj&index=9" target="_blank">ютуб</a></li>
+<li>Лекция 10 (14.04.2022): <a href="https://cloud.mail.ru/stock/eFRW4jiyn6iEF5XqDTFA4DbX" target="_blank">облако</a>+<a href="https://www.youtube.com/watch?v=ITp00XKLA7s&list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj&index=10" target="_blank">ютуб</a></li>
+<li>Лекция 11 (20.04.2022): <a href="https://cloud.mail.ru/stock/aEZqFNqarBEApwpQpa3CHetC" target="_blank">облако</a>+<a href="https://www.youtube.com/watch?v=-BoLNbJ0lvc&list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj&index=11" target="_blank">ютуб</a></li>
+<li>Лекция 12 (27.04.2022): <a href="https://cloud.mail.ru/stock/aEZqFNqarBEApwpQpa3CHetC" target="_blank">облако</a>+<a href="https://www.youtube.com/watch?v=BB9BRJxzNDM&list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj&index=12" target="_blank">ютуб</a></li>
+<li>Лекция 13 (4.05.2022): <a href="https://cloud.mail.ru/stock/aEZqFNqarBEApwpQpa3CHetC" target="_blank">облако</a>+<a href="https://www.youtube.com/watch?v=rD_kBt9Wfrg&list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj&index=13" target="_blank">ютуб</a></li>
+<li>Лекция 14 (11.04.2022): <a href="https://cloud.mail.ru/stock/aEZqFNqarBEApwpQpa3CHetC" target="_blank">облако</a>+<a href="https://www.youtube.com/watch?v=AjzuEFAxFxI&list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj&index=14" target="_blank">ютуб</a></li>
+<li>Лекция 15 (18.04.2022): <a href="https://cloud.mail.ru/stock/aEZqFNqarBEApwpQpa3CHetC" target="_blank">облако</a>+<a href="https://www.youtube.com/watch?v=PurUsP8HsIY&list=PLGLpQPCN5inY5edkVb_jd1RxxX1PKJsIj&index=15" target="_blank">ютуб</a></li>
+</details>
+<details class="details2"><summary>Бушевики</summary>
+<blockquote><s>ТР1: </s><a href="https://drive.google.com/file/d/1AG2NJn0uDy5S6bm9xd1Cq56U5az0L6HK/view" target="_blank"><s>Чудесенко В.Ф.</s></a><s>Раздел &quot;Теории функций комплексного переменного и операционное исчисление&quot;, № 21, 22, 23, 24, 26 двумя способами кроме №26.</s></blockquote>
+<ul><li><a href="https://telegra.ph/file/b08205c53cac5538180ae.png">Оригиналы/изображения</a>+ <a href="https://telegra.ph/file/1ab67677c0aef4a0177f1.png">лаплас</a></li></ul>
+<blockquote><s>ТР2: </s><a href="https://disk.yandex.ru/i/d8A0wWEoXrkRiA" target="_blank"><s>Кузнецов Л.А.</s></a><s>Раздел &quot;Кратные интегралы&quot; № 1, 2, 5, 7, 8, 11, 13 по </s><a href="https://telegra.ph/file/9053b77a5632c44d90c89.png"><s>новой нумерации</s></a><s>вариантов&#33; НОМЕР 8 ДЕЛАЕМ n ВАРИАНТ И n+1 ВАРИАНТ&#33;</s></blockquote>
+<ul><li><a href="http://repo.ssau.ru/bitstream/Metodicheskie-ukazaniya/Kratnye-integraly-i-ih-prilozheniya-Elektronnyi-resurs-metod-ukazaniya-53421/1/%d0%91%d1%83%d1%88%d0%ba%d0%be%d0%b2%20%d0%a1.%d0%92.%20%d0%9a%d1%80%d0%b0%d1%82%d0%bd%d1%8b%d0%b5%20%d0%b8%d0%bd%d1%82%d0%b5%d0%b3%d1%80%d0%b0%d0%bb%d1%8b.pdf" target="_blank">Бушков С.В. Кратные интегралы.pdf</a></li></ul>
+<ul><li><strong>ТР3: </strong><a href="http://repo.ssau.ru/bitstream/Uchebnye-posobiya/Teoriya-veroyatnostei-Elektronnyi-resurs-tipovye-raschety-ucheb-posobie-55261/1/%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%20%D0%95.%D0%90.%20%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F%20%20%D0%B2%D0%B5%D1%80%D0%BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9.pdf" target="_blank"><strong>Ефимов Е.А., Иванова О.С., Коломиец Л.В. Теория вероятностей. Типовые расчеты.</strong></a></li></ul>
+</details>
+
+<h3 id="Асис"><a href="#%D0%9E%D0%B3%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">Асис</a></h3>
+<ul><li>Воронов Константин Евгеньевич - <a href="mailto:voronov.ke@ssau.ru">voronov.ke@ssau.ru</a></li>
+<li><a href="https://biokek.ucoz.net/asis/Gonorovsky.pdf" target="_blank">Гоноровский</a>+ <a href="https://disk.yandex.ru/d/AQP_crT7T9zmkA" target="_blank">лекции</a></li></ul>
+<details class="details1"><summary> говорящий усатый, задание на курсач, и программы для курсача</summary>
+<!--figure><figcaption>про курсач</figcaption><audio controls src="https://biokek.surge.sh/asis/dead_kursach.mp3"></audio></figure-->
+<ul><li><a href="http://repo.ssau.ru/bitstream/Metodicheskie-ukazaniya/Analiz-sistem-i-signalov-Elektronnyi-resurs-metod-ukazaniya-k-kurs-rabote-53895/1/%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%B2%20%D0%9A.%D0%95.%20%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%20%D0%B8%20%D1%81%D0%B8%D0%B3%D0%BD%D0%B0%D0%BB%D0%BE%D0%B2.pdf" target="_blank">Скорее всего, методичка по курсачу</a><br><a href="https://disk.yandex.ru/d/NPP1II_ZhxZevg" target="_blank"><strong>Ладно, курсач от самого Воронова</strong></a></li><li>Для тех, кому не терпится сдать курсач раньше всех и получить за это небывалые плюшки, расшифровка цифр:<br>Cигнал,таблица1,таблица 2,таблица 3,таблица 4, схема, метод(1-классический, 2 - операторный, 3 - спектральный, 4- дюамель) </li><li><a href="https://telegra.ph/orcad-bez-registracii-i-sms-11-05#%D0%9C%D0%B0%D1%82%D0%BA%D0%B0%D0%B4">маткад</a> + <a href="https://disk.yandex.ru/d/N1bQERDJwjLfEA" target="_blank">Graph </a> + <a href="https://telegra.ph/orcad-bez-registracii-i-sms-11-05">оркад</a></li></ul></details>
+
+<details class="details2"><summary>Лабы по сосисам с озвучкой и без озвучки</summary><ul><li><a href="https://disk.yandex.ru/d/uxWIHmB26FAXEw" target="_blank"><strong>Асисные лабы</strong></a><a href="https://telegra.ph/6269-09-24#%D0%90%D1%81%D0%B8%D1%81">+ <strong>все с прошлого семестра</strong></a><br class="inline"></li></ul>
+<figure><figcaption>4 лаба</figcaption><audio controls src="https://biokek.surge.sh/asis/4lr.mp3"></audio></figure>
+<figure><figcaption>5 лаба</figcaption><audio controls src="https://biokek.surge.sh/asis/5lr.mp3"></audio></figure>
+<figure><img src="https://telegra.ph/file/08e194c6fa2f83db6ab13.png"><figcaption>5 лаба</figcaption></figure>
+<figure><figcaption>6 лаба - варианты</figcaption><audio controls src="https://biokek.surge.sh/asis/6lr_1.mp3"></audio></figure>
+<figure><figcaption>6 лаба - про выполнение</figcaption><audio controls src="https://biokek.surge.sh/asis/6lr_2.mp3"></audio></figure>
+<figure><figcaption>7 лаба - варианты и начало расчета</figcaption><audio controls src="https://biokek.surge.sh/asis/7lr.mp3"></audio></figure>
+<figure><figcaption>7 лаба - про выполнение</figcaption><audio controls src="https://biokek.surge.sh/asis/7lr2.mp3"></audio></figure>
+<figure><figcaption>8 лаба - варианты и что-то там</figcaption><audio controls src="https://biokek.surge.sh/asis/8lr_1.mp3"></audio></figure>
+<figure><figcaption>8 лаба - про выполнение</figcaption><audio controls src="https://biokek.surge.sh/asis/8lr_2.mp3">Y</audio></figure>
+<ul><li>9 лаба - супер флекс без всякого деда.</li><li>Разработать модулятор сигналов, собрать в пакет оркад, представить результаты моделирования.</li></ul>
+</details>
+
+<h4 id="АУЕ"><a href="#%D0%9E%D0%B3%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">АУЕ</a></h4>
+<ul><li>Родин Дмитрий Владимирович - <a href="mailto:rodin@ssau.ru">rodin@ssau.ru</a></li></ul>
+<details class="details1"><summary title="которые никто не откроет даже">книжки</summary><ul><li><a href="https://disk.yandex.ru/i/IfPwspxJFy0mhg" target="_blank">Paul Horowitz, Winfield Hill The Art of Electronics, Third Edition</a>- учим английский во имя Родина и своей будущей успешной жизни</li><li><a href="https://disk.yandex.ru/d/Ifvi_gpNNPkJFw" target="_blank">Русская версия Хорохиля</a></li><li><a href="https://disk.yandex.ru/i/gpf281CYeeDTOA" target="_blank">Зевеке</a>- повторяем ОТЦ</li><li><a href="https://disk.yandex.ru/d/jXXijQWre9XhsQ" target="_blank">Титце Шенк</a>- лучше не лезьте, не лезьтe</li></ul></details>
+
+<details class="details2"><summary>Лабы(методички и микрокэпы)</summary><details class="details3"><summary>нормальный микрокэп</summary><figure><img src="https://telegra.ph/file/d4c87f7a7829a6d9d931f.png"><figcaption>инструкция</figcaption></figure><a href="https://disk.yandex.ru/d/DvynCCyry3_7Zw">сам файл. распаковать в корень диска С</a></details><ul><li><a href="https://www.spectrum-soft.com/download/download.shtm" target="_blank">Микрокэп</a></li><li><a href="https://telegra.ph/aue-03-26#1-%D0%BB%D0%B0%D0%B1%D0%B0">1 лаба</a></li><li><a href="https://telegra.ph/aue-03-26#2-%D0%BB%D0%B0%D0%B1%D0%B0">2 лаба</a></li><li><a href="https://telegra.ph/aue-03-26#3-%D0%BB%D0%B0%D0%B1%D0%B0">3 лаба</a></li><li><a href="https://telegra.ph/aue-03-26#4-%D0%BB%D0%B0%D0%B1%D0%B0">4 лаба - не нужна</a></li></ul></details>
+
+<details class="details3"><summary>Домашки и расчетки</summary>
+<figure><img src="https://telegra.ph//file/d4446144f4db8f7e7ae65.png"><figcaption>первая домашка</figcaption></figure>
+<ul><li><a href="https://youtu.be/PtDTkrb5W6w?list=PLGLpQPCN5inbbjqhzdgzAwxA3SzoKRNwN&t=4506">таймкод про первую домашку</a></li><li><a href="https://biokek.ucoz.net/rodin/OE.pdf" target="_blank">методичка первая расчетка(графоанал. метод)</a></li><li><a href="https://biokek.ucoz.net/rodin/aye2.pdf" target="_blank">методичка по второй расчетке(фотографии)</a></li><li><a href="https://biokek.ucoz.net/rodin/Itog1.doc" target="_blank">методичка по второй расчетке(двукаскадный ухуитель)</a></li><li><a href="https://biokek.ucoz.net/rodin/Itog1.doc" target="_blank">методичка по третьей расчетке(Расчёт вторичного источника питания)</a></li><li><a href="https://biokek.ucoz.net/rodin/Itog1.doc" target="_blank">методичка по четвертой расчетке(упрощенный операционный усилитель)</a></li></ul></details>
+
+<h3 id="СКП"><a href="#%D0%9E%D0%B3%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">СКП</a></h3>
+<ul><li>Муравьев Александр Николаевич - <a href="mailto:muravev.an@ssau.ru">muravev.an@ssau.ru</a></li></ul>
+
+<details class="details1"><summary>Лабы</summary>
+<ul><li><a href="https://telegra.ph/orcad-bez-registracii-i-sms-11-05">оркад</a>+ <a href="https://disk.yandex.ru/d/YrdETe4v2Ktpzg" target="_blank">файл с доп.библиотеками</a>(распаковать, запустить, забить болт, если скажут что это вирус(может и вирус, но виноват Муравьев. Путь к оркаду должен найти сам, если надо - поможете))</li><li>1 лаба - протеус и как в нем флексить. <a href="https://disk.yandex.ru/d/lByYPpOPMBxkRw" target="_blank">методичка</a></li><li>2 лаба - красивое в оркаде. <a href="https://biokek.ucoz.net/skp/Lite_3-6.pdf" target="_blank">методичка</a></li><li>3 лаба - еще красивое в оркаде <a href="https://biokek.ucoz.net/skp/Lite_3-6.pdf" target="_blank">методичка</a></li><li>4 лаба что то по логике, методички в явном виде не существует</li><li>курсачи и идз появятся позже, мне некогда</li></ul></details>
+<details class="details2"><summary>Книжки</summary><ul><li><a href="https://biokek.neocities.org/keown.pdf" target="_blank">Keown</a></li></ul></details>
+<details class="details2"><summary>Курсач</summary><ul><li><a href="https://biokek.ucoz.net/skp/mursach.pdf" target="_blank">Мурсач</a></li></ul><figure><img src="https://telegra.ph/file/166e5d7ae3d50005fa3a6.png"><figcaption>Варианты курсовой</figcaption></figure><figure><img src="https://telegra.ph/file/6e477df44f5f9876d2a21.png"><figcaption>Варианты идз по цифровым схемам</figcaption></figure></details>
+
+
+<h3 id="Философия"><a href="#%D0%9E%D0%B3%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">Философия</a></h3>
+<ul><li>Демин Илья Вячеславович - <a href="mailto:ilyadem83@yandex.ru">ilyadem83@yandex.ru</a></li></ul>
+<details class="details1"><summary>Тексты</summary><ul><li><a href="https://biokek.ucoz.net/flsf/Kh.pdf" target="_blank">полная хрестоматия</a></li><li><a href="https://biokek.ucoz.net/flsf/6text.pdf" target="_blank">6 текст</a></li><li><a href="https://biokek.ucoz.net/flsf/7text.pdf" target="_blank">7 текст</a></li><li><a href="https://biokek.ucoz.net/flsf/8text.pdf" target="_blank">8 текст</a></li></ul></details>
+
+<details class="details2" title="которые конечно никто не смотрит"><summary>Лекции</summary><ul><li><a href="https://bbb.ssau.ru/playback/presentation/2.0/playback.html?meetingId=abc55abd0549e4dd1b2b524d6da8500612abe6af-1614245318170" target="_blank">конспектировать</a></li><li><a href="https://bbb.ssau.ru/playback/presentation/2.0/playback.html?meetingId=b783b6e7f1c680c7c4c57abd58d0894ca0aed058-1616052808789" target="_blank">лекция за 10.03</a></li><li><a href="https://bbb.ssau.ru/playback/presentation/2.3/abc55abd0549e4dd1b2b524d6da8500612abe6af-1616664568551?meetingId=abc55abd0549e4dd1b2b524d6da8500612abe6af-1616664568551" target="_blank">лекция за 24.03</a></li><li><a href="https://bbb.ssau.ru/playback/presentation/2.3/b783b6e7f1c680c7c4c57abd58d0894ca0aed058-1618471946654?meetingId=b783b6e7f1c680c7c4c57abd58d0894ca0aed058-1618471946654" target="_blank">лекция за 07.04</a></li><li><a href="https://bbb.ssau.ru/playback/presentation/2.3/abc55abd0549e4dd1b2b524d6da8500612abe6af-1619083772753?meetingId=abc55abd0549e4dd1b2b524d6da8500612abe6af-1619083772753" target="_blank">лекция за 21.04</a></li><li><a href="https://bbb.ssau.ru/playback/presentation/2.3/abc55abd0549e4dd1b2b524d6da8500612abe6af-1621502849124?meetingId=abc55abd0549e4dd1b2b524d6da8500612abe6af-1621502849124" target="_blank">лекция за 05.05</a></li></ul></details>
+<details class="details3" title="куда конечно мы никогда не пойдем"><summary>Философская школа «Симпозион»</summary><ul><li>Философская школа «Симпозион» в СОУНБ - <a href="https://vk.com/simposion_sounb" target="_blank">https://vk.com/simposion_sounb</a><br class="inline">Вход свободный&#33; Занятия проходят в многофункциональном зале СОУНБ (2 этаж), проспект Ленина, 14а. Начало в 18:30.</li></ul></details>
+
+<h3 id="Основы-профессиональной-культуры"><a href="#%D0%9E%D0%B3%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">Основы профессиональной культуры</a></h3>
+<ul><li>Свиридова Галина Борисовна - <a href="mailto:gabot98@mail.ru">gabot98@mail.ru</a></li><li><a href="https://do.ssau.ru/moodle/enrol/index.php?id=1411" target="_blank">Курс на мудле</a>- стал доступен для прохождения&#33;</li></ul>
+
+<details class="details1"><summary>про реферат</summary><ul><li>Ниже - темы рефератов. Отправлять на почту <a href="mailto:gabot98@mail.ru">gabot98@mail.ru</a>, обязательно титульный лист и список использованных источников, файл подписывать &quot;Фамилия&quot;_6269_ОПК</li></ul><figure><img src="https://telegra.ph/file/2467dbf2b8afefca9f930.png"><figcaption></figcaption></figure></details>
+<h3 id="Основы-биологии"><a href="#%D0%9E%D0%B3%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">Основы биологии</a></h3>
+<ul><li>Васнева Жанна Петровна - <a href="mailto:vasneva@list.ru">vasneva@list.ru</a></li><li><a href="https://drive.google.com/drive/folders/136e8el8aANL2HSBmKPUgTEqIa7ayN8vl?usp=sharing" target="_blank">папОчка с заданиями</a></li><li><a href="https://do.ssau.ru/moodle/course/view.php?id=1503" target="_blank">курс на мудле</a></li></ul>
+<details class="details1"><summary>темы сообщений</summary><table><tbody><tr><td>1</td><td>АСТАФЬЕВ</td><td>ЛАМАРК</td><td>ВИТАМИН А</td></tr><tr><td>2</td><td>ВОЛКОВ</td><td>ЛИННЕЙ</td><td>ВИТАМИН C</td></tr>
+<tr><td>3</td><td>ГУСЬКОВА</td><td>БЭР</td><td>ВИТАМИН E</td></tr><tr><td>4</td><td>ЗАИКИН</td><td>ЭРЛИХ</td><td>ВИТАМИН K</td></tr><tr><td>5</td><td>КРАСНОВ</td><td>МЕЧНИКОВ</td><td>ВИТАМИН B</td></tr><tr><td>6</td><td>КРЕМНЕВ</td><td>ПАСТЕР</td><td>ВИТАМИНОПОДОБНЫЕ СОЕДИНЕНИЯ Q</td></tr><tr><td>7</td><td>ЛЕОНТЬЕВ</td><td>МЕНДЕЛЬ</td><td>ОМЕГИ</td></tr><tr><td>8</td><td>РОЖНОВСКАЯ</td><td>ДАРВИН</td><td>ГОРМОНЫ ЩИТОВИДНОЙ ЖЕЛЕЗЫ</td></tr><tr><td>9</td><td>САЛЬЧИХИНА</td><td>ВИРХОВ</td><td>ГОРМОН ИНСУЛИН</td></tr><tr><td>10</td><td>СОГОНОВ</td><td>ГУК</td><td>ЖЕНСКИЕ ПОЛОВЫЕ ГОРМОНЫ</td></tr><tr><td>11</td><td>СОРОКИНА</td><td>ЛЕВЕНГУК</td><td>ГОРМОНЫ НАДПОЧЕЧНИКОВ</td></tr><tr><td>12</td><td>ТРЕТЬЯКОВ</td><td>ШВАНН</td><td>МУЖСКИЕ ПОЛОВЫЕ ГОРМОНЫ</td></tr><tr><td>13</td><td>ШИЛЬНИКОВ</td><td>КОХ</td><td>ГОРМОНЫ ГИПОФИЗА</td></tr></tbody></table></details>
+<ul><li>Создано на базе <a href="https://telegra.ph">telegra.ph</a> и моей шизофрении</li></ul>
+<br><br><br><br><br><br><br><br>
+<br><br><br><br>
+
+<details class="details1"><summary>моя любимая тема - какой же бляздец был в этот раз</summary><ul><li>Хуила блять ебаная. <strong>Почитаете, посмотрите, с божьей помощью. Вызывает сомнение</strong> необходимость продолжать такое образование. <strong>Проверить, уточнить. Плохое подавление</strong> желания жить. <strong>Ну так сразу сказать сложно, ну не сразу тоже не скажу</strong>, и через месяц тоже, <strong>титульный лист неправильный</strong> и все нетитульные тоже. <strong>Показать</strong> всем своим подходом к обучению, что все в стране не просто идет, а летит к в бездну. <strong>Переделать</strong> что нибудь. <strong>Надо подумать.</strong> Да, в прошлый раз просто <strong>вызывало сомнения</strong>, но теперь я уверен, что это <strong>необходимо переделать</strong>. Ну и что, что все сделано в соответствии с авторитетными учебниками и вы объяснили каждый пункт, хочу перемен в вашей курсовой работе. Влад Баширов переделает 10 работ, а вы чем хуже. И вообще, желаю ручного вычисления интегралов, программирование от лукавого, а у нас только <strong>с божью помощью</strong> работать разрешается. Из-за таких, как вы, факультет электроники был сожран факультетом информатики. Кстати, умножать и делить тоже нельзя - требуется пользоваться сложением или вычитанием, но об этом в следующей серии правок. <strong>Незакрытые лабораторные влияют самым прямым образом</strong>, я посмеюсь с тебя, клоуна ебаного, потратившего на эту хуетень кучу времени.<strong> А что это вас так много</strong>. НАПИШИТЕ НА СЕБЯ ХАРАКТЕРИСТИКУ И СОСТАВЬТЕ ГЕНЕАЛОГИЧЕСКОЕ ДРЕВО. Оценки на диске. Занятия закончены. Напоминаю, переписав контрольную, вы полностью обновите свои оценки по ней: предыдущие оценки не сохраняются )) Это по госту, но не по госту. Невкусно, и точка.</li></ul></details>
+
+
+
+
+</article>
+</main>
+</div>
+</div>
+</body>
+</html>

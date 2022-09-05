@@ -1,0 +1,46 @@
+~version: "2.1"
+
+$header : //title
+body:    //article
+description:       $body//p[has-class("hide")]
+site_name: "спят усатые игрушки"
+@remove:  $body//a[has-class("tooltip")]//img
+@remove:  $body//a[has-class("tooltipl")]//img
+@remove:  $body//p[has-class("ass")]
+@remove:  $body//details//table
+@remove:  $body//p[has-class("hide-on-mobile")]
+@remove:  $body//div[has-class("hide-on-mobile")]
+@remove:  $body//p[has-class("ass")]
+@pre:    $body//*
+@remove:  $body//p[has-class("hide")]
+$bg_section: $body//section[has-class("is-imageBackgrounded")]
+@background_to_image: $bg_section//div[has-class("section-backgroundImage")]
+
+# Replace the //div tag with <figure> tags.
+<figure>: $bg_section//div[has-class("section-background")]
+# Set the figure as the value of the 'cover' *property*.
+cover: $bg_section//figure
+
+title: "пока без даты здесь"
+#subtitle:"думаю, как ее прикрутить"
+
+
+#author: "Ссылка на оглавление"
+#author_url: "https://biokek.surge.sh/#Оглавление"
+#@style_to_attrs(width="600px", height="400px"): //img
+#<slideshow>: $body//div[has-class("wrapper")]
+
+
+cover: $body//h1/next-sibling::figure[.//video]
+cover: $body//h1/next-sibling::figure[.//img]
+
+image_url: $body//div[has-class("wrapper")]
+image_url: $cover/self::img/@src
+image_url: $cover/self::figure//img/@src
+
+image_url: $body//img/@src
+@before(<anchor>, name, @id): $body//h3[@id]
+@before(<anchor>, name, @id): $body//h4[@id]
+
+@remove:  $body//h1
+@remove:  $body//iframe
