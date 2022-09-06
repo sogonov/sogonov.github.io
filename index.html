@@ -1,20 +1,22 @@
-<!DOCTYPE html><html><head>
-<title>и снова Telegraph</title>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link type="text/css" rel="stylesheet" href="bioteh.css?v=9" id="theme-link"/>
-<meta name="viewport" content="width=device-width">
-<!-- , initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
-<meta name="format-detection" content="telephone=no">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="MobileOptimized" content="176">
-<meta name="HandheldFriendly" content="True">
-<meta property="og:url" content="https://biokek.surge.sh/" />
-<meta property="og:image" content="https://telegra.ph/file/6e2eeb42bfb8bbc48166b.png" />
-<!-- <link rel="shortcut icon" href="favicon.ico?1" type="image/x-icon"> -->
-<link rel="icon" type="image/png" href="img/favicon.png?1" sizes="16x16">
-<link rel="icon" type="image/png" href="img/favicon.png?1" sizes="32x32">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>и снова Telegraph</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link type="text/css" rel="stylesheet" href="bioteh.css?v=9" id="theme-link"/>
+	<meta name="viewport" content="width=device-width">
+	<!-- , initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="MobileOptimized" content="176">
+	<meta name="HandheldFriendly" content="True">
+	<meta property="og:url" content="https://biokek.surge.sh/" />
+	<meta property="og:image" content="https://telegra.ph/file/6e2eeb42bfb8bbc48166b.png" />
+	<!-- <link rel="shortcut icon" href="favicon.ico?1" type="image/x-icon"> -->
+	<link rel="icon" type="image/png" href="img/favicon.png?1" sizes="16x16">
+	<link rel="icon" type="image/png" href="img/favicon.png?1" sizes="32x32">
 </head>
 
 
@@ -25,7 +27,7 @@
   <tbody>
 </table>
 
-<!-- Календарь -->
+<!-- Календарь(скрипт не мой, взят из просторов интернета) -->
 <script>
 function Calendar2(id, year, month) {
 var Dlast = new Date(year,month+1,0).getDate(),
@@ -90,8 +92,6 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 	<!-- else if (hour >= 0 && hour < 7) {document.getElementById("contArea").innerHTML = '<img src="img/son.png" alt="" />';}; -->
 <!-- </script> -->
 <body>
-
-
 <div class="tl_page_wrap">
 <div class="tl_page">
 <main class="tl_article tl_article_editable">
@@ -105,8 +105,7 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 <script>
 	function toggledark() {
 		if (localStorage.getItem('theme') === 'dark') {localStorage.removeItem('theme');document.body.classList.remove("dark");} 
-		else {localStorage.setItem('theme', 'dark');document.body.classList.add("dark");}
-	}
+		else {localStorage.setItem('theme', 'dark');document.body.classList.add("dark");}}
 	if (localStorage.getItem('theme') === 'dark') {document.body.classList.add('dark');document.getElementById('toggledark').checked = true;}
 	else {document.body.classList.remove('dark');document.getElementById('toggledark').checked = false;}
 </script>
@@ -152,7 +151,7 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 
 
 <details class="details1"><summary>Расписания</summary>
-	<p hidden id="rasp"  hidden></p>
+	<p id="rasp"  hidden></p>
 	<figure><img src="rasp/2.png"><figcaption>2</figcaption></figure>
 	<details class="details2"><summary>Расписания на следующие недели</summary>
 		<figure><img src="rasp/3.png"><figcaption>3</figcaption></figure>
@@ -187,7 +186,7 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 	<li><a href="http://lbts.ssau.ru/index.php/ru/" target="_blank">Cайт кафедры ЛБС</a></li>
 	<li style="font-size: 12pt;">если реклама на ютубе отвлекает от лекций- устанавливаем <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=ru" target="_blank">расширение в браузер</a></li>
 </ul>
-<pre><strong>В этом семестре у нас 4 экзамена: биоживые основы систем, метрология, аэу и микропроцессоры. Еще дифзачет по электродам, курсач у Родина. Остальное(физра, логическая культура, экология, управляемые проекты<!--, этичная коммуникация и технологичная коммуникация-->) - зачёты.</strong></pre>
+<pre><strong>В этом семестре у нас 4 экзамена: биоживые основы систем, метрология, аэу и микропроцессоры. Еще дифзачет по электродам, курсач у Родина. Остальное(физра, логическая культура, экология, управляемые проекты - зачёты.</strong></pre>
 
 <!-- <details class="details2"><summary>Расписание сессии</summary><figure><img src="https://telegra.ph/file/42c52fc0f7f40a5f61dfe.png"></figure></details> -->
 <details class="details2"><summary>Прошлые статьи из telegra.ph</summary>
@@ -197,57 +196,49 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 </ul>
 </details>
 <details class="details2"><summary>Прошлые статьи сайтом</summary>
-	<p>
-		<a href="4semestr.html">4 семестр</a><br>
-		<a href="3semestr.html">3 семестр</a><br>
-		<a href="2semestr.html">2 семестр</a><br>
-		<a href="1semestr.html">1 семестр</a>
-	</p>
+	<ul>
+		<li><a href="4semestr.html">4 семестр</a> + <a href="3semestr.html">3 семестр</a></li>
+		<li><a href="2semestr.html">2 семестр</a> + <a href="1semestr.html">1 семестр </a></li>
+	</ul>
 </details>
 
 <details class="details2"><summary>много букв о том, что тут происходит</summary>
 <details class="details3"><summary style="font-size: 12pt; color: #008000">o навигации</summary>
-<p>Теперь по умолчанию спойлер с расписанием <strong>закрыт</strong>, но, если вы хотите при открытии, например, закладки в своем любимом браузере видеть сразу открытым наше чудесное
-	расписание, а не лестницу из спойлеров, добавьте в закладки не просто ссылку на сайт, а вот такую ссылку с якорем - <a href="#rasp" target="_blank">https://biokek.ml/#rasp</a> - по ней сайт	будет открываться сразу с этим развернутым спойлером.
-	<br> Аналогичную закладку можно сделать для оглавления - 
-	<a href="#Оглавление" target="_blank"> https://biokek.ml/#Оглавление</a>
-	<br>аналогично:
-	<br><a href="#bbb" target="_blank">https://biokek.ml/#bbb</a>
-	<br><a href="#plst" target="_blank">https://biokek.ml/#plst</a>
-	<br>в мобильных браузерах(всех, что я тестировал) - не работает нормально, фича чисто для пк</p>
+	<p>Теперь по умолчанию спойлер с расписанием <strong>закрыт</strong>, но, если вы хотите при открытии, например, закладки в своем любимом браузере видеть сразу открытым наше чудесное 	расписание, а не лестницу из спойлеров, добавьте в закладки не просто ссылку на сайт, а вот такую ссылку с якорем - <a href="#rasp" target="_blank">https://biokek.ml/#rasp</a> - по ней сайт	будет открываться сразу с этим развернутым спойлером.
+	<br> Аналогичную закладку можно сделать для оглавления - <a href="#Оглавление" target="_blank"> https://biokek.ml/#Оглавление</a>
+	<br>аналогично:	<br><a href="#bbb" target="_blank">https://biokek.ml/#bbb</a>
+	<!-- <br><a href="#plst" target="_blank">https://biokek.ml/#plst</a> --><br>в мобильных браузерах(всех, что я тестировал) - не работает нормально, фича чисто для пк</p>
 </details>
-<!-- <details class="details2"> -->
-<!-- <summary style="font-size: 10pt;">больше не актуально - обновляется без вашего участия</summary> -->
-<!-- <p><i>Для гарантированного обновления информации в любом браузере на ПК хотя бы раз в день нажимаем<b> "Сtrl" + "F5"</b> и все будет хорошо. Особенно, если вы видите что-то явно некрасивое, большое и кривое.  Мобильные браузеры ни в какую не хотят обновлять скрипты и стили сайта, поэтому в один прекрасный момент он начинает выглядеть как говно. Нужно очистить кэш браузера либо в системных настройках, либо в настройках браузера, кому как удобно.</i></p> -->
-<!-- </details> -->
-<!-- <details class="details3"> -->
-<!-- <summary style="font-size: 10pt;">про необновление встроенного в телеграм просмотра и его глюки</summary> -->
-<!-- <p>Про косяки встроенного просмотра в телеграм на iOS известно, с ними можно жить, или же просто использовать статью по <a href="https://biokek.surge.sh/">прямой ссылке</a> в Safari. Я честно не знаю, почему на яблоке такая хуйня.	На андроид и в любом браузере все адекватно отображается, код сайта вылизан, выдрочен, выплакан, но instant view на iOS все равно кривой.<br><br><a href="https://t.me/iv?url=https%3A%2F%2Fbiokek.ucoz.net%2F&rhash=295abc8447a42b">это cсылка для встроенного просмотра</a>  в телеграм на Android и iOS. Пока только по ней можно пользоваться сайтом прямо в телеграме, без браузера. Не всегда обновляется сразу(а может и вообще никогда самостоятельно не обновляется). Решение - переотправить эту ссылку для встроенного просмотра себе в избранное, например. В этот момент произойдет обновление. Делать это можно ежедневно... Зато всегда под рукой будет. На iOS можно просто нажать не на саму кнопку "посмотреть", а на ссылку. Тогда загрузится свежая версия. Возможно, и на андроиде так, мне в целом похуй..<br> Сразу вопрос, можно ли иначе? нет, пока нельзя. Для этого мне необходимо на сайте создать 10 разных страниц(всего лишь, ну да), для каждой составить и проверить шаблон, по которому создается предпросмотр, после этого появится возможность 	подать в телеграм заявку о том, что у меня есть пиздатый сайт и для него есть охуительный шаблон для создания предпросмотра, который обкатан и проверен на 10 страницах сайта, после чего, возможно, заявку одобрят(а могут и не одобрить) и предпросмотр будет создаваться автоматически(и обновляться без переотправки), по прямой ссылке <a href="https://biokek.surge.sh/">https://biokek.surge.sh/</a>, как было в вашем любимом телеграфе. Ну а пока, кое-какие сложности есть, нет никаких сложностей в браузере.</p> -->
-<!-- </details> -->
-<!-- <p>Смена темы, возможность взаимодействия с вами, отвязка от облачных хранилищ, различные интеграции с сервисами вуза реализуемы, но требуют по возможности нормального платного хостинга(и времени). Автор предпочитает есть и спать хотя бы иногда. <br></p> --></details>
+
+<details class="details3"><summary style="font-size: 10pt;">про необновление встроенного в телеграм просмотра и его глюки</summary>
+<p>Про косяки встроенного просмотра в телеграм на iOS известно, с ними можно жить, или же просто использовать статью по <a href="https://biokek.ml/">прямой ссылке</a> в Safari. Я честно не знаю, почему на яблоке такая хуйня.	На андроид и в любом браузере все адекватно отображается, код сайта вылизан, выдрочен, выплакан, но instant view на iOS все равно кривой.<br><br><a href="https://t.me/iv?url=https%3A%2F%2Fbiokek.ml%2F&rhash=be0b466f35a9c2">это cсылка для встроенного просмотра</a>  в телеграм на Android и iOS. Пока только по ней можно пользоваться сайтом прямо в телеграме, без браузера. Не всегда обновляется сразу(а может и вообще никогда самостоятельно не обновляется). Решение - переотправить эту ссылку для встроенного просмотра себе в избранное, например. В этот момент произойдет обновление. Делать это можно ежедневно... Зато всегда под рукой будет. На iOS можно просто нажать не на саму кнопку "посмотреть", а на ссылку. Тогда загрузится свежая версия. Возможно, и на андроиде так, мне в целом похуй..<br> Сразу вопрос, можно ли иначе? нет, пока нельзя. Для этого мне необходимо на сайте создать 10 разных страниц(всего лишь, ну да), для каждой составить и проверить шаблон, по которому создается предпросмотр, после этого появится возможность 	подать в телеграм заявку о том, что у меня есть пиздатый сайт и для него есть охуительный шаблон для создания предпросмотра, который обкатан и проверен на 10 страницах сайта, после чего, возможно, заявку одобрят(а могут и не одобрить) и предпросмотр будет создаваться автоматически(и обновляться без переотправки), по прямой ссылке <a href="https://biokek.ml/">https://biokek.ml/</a>, как было в вашем любимом телеграфе. Ну а пока, кое-какие сложности есть, нет никаких сложностей в браузере.</p>
+</details>
+</details>
 </details>
 
 <details class="details1"><summary>Ссылки-на-bbb-лекций</summary>
-<a hidden name="bbb" class="hide"></a>
+<p hidden id="bbb" class="hide"></p>
 <ol dir="auto">
 	<li><a class="tooltip" href="https://bbb.ssau.ru/b/qyr-n2p-qcu" target="_blank"><strong>Цифровые устройства и микропроцессоры</strong><span><img src="img/sleep3.png"/></span></a></li>
-	<li><a class="tooltipl" href="https://bbb.ssau.ru/b/73q-4ne-vrr" target="_blank"><strong>Управление проектами</strong><span><img src="img/sleep1.png"/></span--></a></li>
+	<li><a class="tooltipl" href="https://bbb.ssau.ru/b/73q-4ne-vrr" target="_blank"><strong>Управление проектами</strong><span><img src="img/sleep2.png"/></span></a></li>
 	<li><a class="tooltip" href="https://bbb.ssau.ru/b/rrj-7wa-jyc" target="_blank"><strong>Изм. преобразователи и электроды в мед. приборах</strong><span><img src="img/sleep7.png"/></span></a></li>	
-		<li><a class="tooltipl" href="https://bbb.ssau.ru/b/pjy-pmk-xe2" target="_blank"><strong>Аналоговые устройства</strong><span><img src="img/sleep2.png"/></span></a></li>
+		<li><a class="tooltipl" href="https://bbb.ssau.ru/b/pjy-pmk-xe2" target="_blank"><strong>Аналоговые устройства</strong><span><img src="img/sleep1.png"/></span></a></li>
 	<li><a class="tooltipl" href="https://bbb.ssau.ru/b/xkr-naq-s5i-bzh" target="_blank"><strong>Культурология</strong><span><img src="img/sleep.png"/></span></a></li>
 	<li><a class="tooltip" href="https://bbb.ssau.ru/b/ump-5gg-hv2-m8x" target="_blank"><strong>Экология</strong><span><img src="img/sleep5.png"/></span></a></li>
 	<li><a class="tooltipl" href="https://bbb.ssau.ru/b/ezv-uf2-ffq" target="_blank">Метрология<span><img src="img/sleep4.png"/></span></a></li>
 </ol>
 </details>
+
 <details class="details1 input hidden-div"><summary>Плейлисты</summary>
+<p hidden id="plst" class="hide"></p>
 <ol dir="auto">
 	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inaGlgmznWKYe9GfjMiwN96q" target="_blank">Цифровые устройства и микропроцессоры</a></li>
 	<li><a class="tooltipl" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inYYvZI4Q8RsGH084nbMjQCc" target="_blank">Управляемые проекты</a></li>
 	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inY490xMZsOYRcYGfKD9nPra" target="_blank">Дедовские электроды</a></li>
-	<!-- <li><a class="tooltipl" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inb783lo2y2sb407PSCH4PGa" target="_blank">анализ сигналов и сосис<span><img src="img/sleep8.png"/></span></a></li> -->
-	<!-- <li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inYuxl02VKphnLu_z9-Q7OUQ" target="_blank">философия<span><img src="img/sleep9.png"/></span></a></li> -->
-	<!-- <li><a class="tooltipl" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inbP-UfYTX7ItI_rf7lEm9Zz" target="_blank">культурные основы<span><img src="img/sleep9.png"/></span></a></li> -->
-	<!-- <li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inZcQB_5vULGn8wqyzPHtNS0" target="_blank">биологические основы<span><img src="img/sleep9.png"/></span></a></li> -->
+	<li><a class="tooltipl" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inaBoiPK1YuseNS7DIoBsqc3" target="_blank">Логическая культура</a></li>
+	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inY6JsrA94L2i6YfPTzJ41G3" target="_blank">Экология</a></li>
+	<li><a class="tooltipl" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inavzcqN5tusXYX5qDxiTFwt" target="_blank">Аналоговые электронные уродства</a></li>
+	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inbtqCQNnfGhYWFQ49KUPgql" target="_blank">Метрология</a></li>
 </ol>
 </details>
 
@@ -260,33 +251,24 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
         <label class="form-check-label" for="chk"></label>
     </div>
 </div>
-
 <script>
 document.getElementById('chk').onclick = function() {  
-if(document.getElementById('chk').checked) {
-	localStorage.setItem('chk', "true");document.querySelector('.input').classList.toggle('hidden-div');} 
-else {
-	localStorage.setItem('chk', "false");document.querySelector('.input').classList.toggle('hidden-div'); }}
-if (localStorage.getItem('chk') == "true") {
-document.getElementById("chk").setAttribute('checked','checked');
-document.querySelector('.input').classList.toggle('hidden-div');
+	if(document.getElementById('chk').checked) {localStorage.setItem('chk', "true");document.querySelector('.input').classList.toggle('hidden-div');} 
+	else {localStorage.setItem('chk', "false");document.querySelector('.input').classList.toggle('hidden-div'); }
 }
-
+if (localStorage.getItem('chk') == "true") {document.getElementById("chk").setAttribute('checked','checked');document.querySelector('.input').classList.toggle('hidden-div');}
 </script>
 
 
-
-
-
 <h4 id="bomzhs"><a href="#contents">Биофизические основы живых систем</a></h4>
-<ul><li title="не говорите что Ананасович">Зайнулин Руслан Анасович<!--/a>, <a href="https://vk.me/id10928730" target="_blank">ВК</a>--></li>
-<li><a href="https://docs.google.com/spreadsheets/d/1rn_2RE17SCqnFEtwQduFk6Bcr2uBKCwSbGDwG6SzTfU/edit#gid=0" target="_blank">табличка про доклады на семинарах</a></li>
+<ul>
+	<li title="не говорите что Ананасович">Зайнулин Руслан Анасович</li>
+	<li><a href="https://docs.google.com/spreadsheets/d/1rn_2RE17SCqnFEtwQduFk6Bcr2uBKCwSbGDwG6SzTfU/edit#gid=0" target="_blank">табличка про доклады на семинарах</a></li>
 </ul>
-<!-- <details class="details1"><summary></summary></details> -->
 
 <h4 id="msiti"><a href="#contents">Метрология, стандартизация и технические измерения</a></h4>
 <ul><li>Гречишников Владимир Михайлович - <a href="mailto:gv@ssau.ru">gv@ssau.ru</a></li></ul>
-<details class="details1" title="какой же пиздец"><summary><!--методички, учебники--></summary></summary>
+<details class="details1" title="какой же пиздец"><summary><!--методички, учебники--></summary>
 <!--ul>
 	<li><a href="http://repo.ssau.ru/bitstream/Metodicheskie-ukazaniya/Sbornik-metodicheskih-ukazanii-k-laboratornym-i-prakticheskim-zanyatiyam-po-elektronike-metrologii-i-avtomatizirovannym-sredstvam-kontrolya-RES-Elektronnyi-resurs-uchebmetod-posobie-53837/1/Гречишников%20В.М.%20Сборник%20методических.pdf" target="_blank">методичка</a></li>
 	<li><a href="http://repo.ssau.ru/bitstream/Uchebnye-posobiya/Metrologiya-i-radioizmereniya-Elektronnyi-resurs-ucheb-posobie-54826/1/Гречишников%20В.М.%20Метрология%20и%20радиоизмерения.pdf" target="_blank">Метрология и радиоизмерения(учебное пособие)</a></li>
@@ -319,6 +301,7 @@ document.querySelector('.input').classList.toggle('hidden-div');
 <h4 id="aeu"><a href="#contents">Аналоговые электронные устройства</a></h4>
 <ul><li>Родин Дмитрий Владимирович - <a href="mailto:rodin@ssau.ru">rodin@ssau.ru</a>, <a href="https://vk.com/write8538835" target="_blank">ВК</a></li></ul>
 <details class="details1"><summary>прошлый семестр</summary>
+<ul><li><a href="https://biokek.ml/rodin/Lek.pdf" target="_blank">лекции пдф</a></li></ul>	
 <details class="details2"><summary title="которые никто не откроет даже">книжки</summary>
 	<ul>
 		<li><a href="https://disk.yandex.ru/i/IfPwspxJFy0mhg" target="_blank">Paul Horowitz, Winfield Hill The Art of Electronics, Third Edition</a>- учим английский во имя Родина и своей будущей успешной жизни</li>
@@ -340,9 +323,9 @@ document.querySelector('.input').classList.toggle('hidden-div');
 </ul>
 </details>
 
-<ul><li><a href="https://biokek.ml/rodin/Lek.pdf" target="_blank">лекции пдф</a></li></ul>
+
 <details class="details4"><summary>Домашки и расчетки</summary>
-<figure><img class="dz"src="https://telegra.ph//file/d4446144f4db8f7e7ae65.png"><figcaption>первая домашка</figcaption></figure>
+<figure><img class="dz" src="https://telegra.ph//file/d4446144f4db8f7e7ae65.png"><figcaption>первая домашка</figcaption></figure>
 <ul>
 	<li><a href="https://youtu.be/PtDTkrb5W6w?list=PLGLpQPCN5inbbjqhzdgzAwxA3SzoKRNwN&t=4506">таймкод про первую домашку</a></li>
 	<li><a href="https://biokek.ml/rodin/OE.pdf" target="_blank">методичка первая расчетка(графоанал. метод)</a></li>
@@ -361,24 +344,22 @@ document.querySelector('.input').classList.toggle('hidden-div');
 
 </ul>
 <details class="details1"><summary>Лекции</summary>
-	<ul>
-		<li><a href="https://biokek.ml\electrods\L\L1.pdf" target="_blank">Лекция 1(05.09.2022)</a></li>
-	</ul>
+	<ul><li><a href="https://biokek.ml/electrods/L/L1.pdf" target="_blank">Лекция 1(05.09.2022)</a></li></ul>
 </details>
 <details class="details2"><summary>Книги</summary>
-	<ul>
-		<li><a href="https://biokek.ml\electrods\Ash_Zh_1.pdf" target="_blank">Аш Ж. и др. - Датчики измерительных систем. кн.1 (1992)</a></li>
-		<li><a href="https://biokek.ml\electrods\Ash_Zh_2.pdf" target="_blank">Аш Ж. и др. - Датчики измерительных систем. кн.2 (1992)</a></li>
+		<ul>
+		<li><a href="https://biokek.ml/electrods/Ash_Zh_1.pdf" target="_blank">Аш Ж. и др. - Датчики измерительных систем. кн.1 (1992)</a></li>
+		<li><a href="https://biokek.ml/electrods/Ash_Zh_2.pdf" target="_blank">Аш Ж. и др. - Датчики измерительных систем. кн.2 (1992)</a></li>
 	</ul>
 </details>
 
 
-<h4 id="upvpd"><a href="#contents">Управление проектами в профессиональной деятельности</a></h4>
+<h4 id="upvpd"><a href="#contents">Упр. проектами в профессиональной деятельности</a></h4>
 <ul>
-	<!-- <!-- <li>лектор: Корнилин Дмитрий Владимирович </li> -->
 	<li title="старший преподаватель кафедры ЛБС (314-18)">Христофорова Юлия Александровна - <a href="mailto:khristoforovajulia@gmail.com">khristoforovajulia@gmail.com</a></li>
 </ul>
 <details class="details1"><summary></summary> </details>
+
 
 <h4 id="eklg"><a href="#contents">Экология</a></h4>
 <ul>
@@ -386,6 +367,7 @@ document.querySelector('.input').classList.toggle('hidden-div');
 	<li>лабник: Платонов Владимир Игоревич - <a href="mailto:rovvv@yandex.ru">rovvv@yandex.ru</a></li>
 </ul>
 <details class="details1"><summary></summary></details>
+
 
 <h4 id="kltrlg"><a href="#contents">Культурология</a></h4>
 <ul>	
@@ -399,7 +381,6 @@ document.querySelector('.input').classList.toggle('hidden-div');
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
-<!-- и моей шизофрении -->
 <ul><li>Создано на базе <a href="https://telegra.ph">telegra.ph</a> </li></ul>
 </article>
 </main>
