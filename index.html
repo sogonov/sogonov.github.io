@@ -86,7 +86,6 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 <div class="tl_page">
 <main class="tl_article tl_article_editable">
 <article id="_tl_editor" class="tl_article_content">
-
 <!-- переключение темы -->
 <label class="dark-version">
     <input type="checkbox" onchange="toggledark()" id="toggledark">
@@ -232,34 +231,6 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 </ol>
 </details>
 
-<!-- переключение cкрытых позиций -->
-<div class="form-group">
-    <div class="form-check">
-        <input type="checkbox"  id="chk">
-        <label class="form-check-label" for="chk"></label>
-    </div>
-</div>
-<script>
-document.getElementById('chk').onclick = function() {
-	if(document.getElementById('chk').checked) {
-	localStorage.setItem('chk', "true"); 
-	const disguise = document.querySelectorAll('.input');
-	disguise.forEach((el) => {el.classList.toggle('hidden-div');});
-	} 
-	else {
-	localStorage.setItem('chk', "false");
-	const disguise = document.querySelectorAll('.input');
-	disguise.forEach((el) => {el.classList.toggle('hidden-div');});
-	}
-}
-if (localStorage.getItem('chk') == "true") {
-document.getElementById("chk").setAttribute('checked','checked');
-const disguise = document.querySelectorAll('.input');
-disguise.forEach((el) => {el.classList.toggle('hidden-div');});
-}
-
-</script>
-
 
 <h4 id="bomzhs"><a href="#contents">Биофизические основы живых систем</a></h4>
 <ul >
@@ -290,6 +261,8 @@ disguise.forEach((el) => {el.classList.toggle('hidden-div');});
 	<li class="input hidden-div"><a href="https://disk.yandex.ru/d/Y-qpy8xbwUKUtQ" target="_blank">Скачать Ltspice c моего яндекс-диска</a></li>
 </ul>
 </details>
+
+
 
 
 <details class="details2"><summary title="которые никто не откроет даже">книжки</summary>
@@ -383,6 +356,34 @@ disguise.forEach((el) => {el.classList.toggle('hidden-div');});
 	<li>семер:  Казанцева Светлана Генриховна </li>
 </ul>
 <details class="details1"><summary>Ничего не понятно и неинтересно</summary></details>
+
+<!-- переключение cкрытых позиций -->
+<div class="form-group">
+    <div class="form-check">
+        <input type="checkbox"  id="chk">
+        <label class="form-check-label" for="chk"></label>
+    </div>
+</div>
+<script>
+document.getElementById('chk').onclick = function() {
+	if(document.getElementById('chk').checked) {
+	localStorage.setItem('chk', "true");
+	<!-- document.querySelector('.input').classList.toggle('hidden-div'); -->
+	const elsP = document.querySelectorAll('.input');elsP.forEach((el) => {el.classList.toggle('hidden-div');});
+	} 
+	else {
+	localStorage.setItem('chk', "false");
+	<!-- document.querySelector('.input').classList.toggle('hidden-div');  -->
+	const elsP = document.querySelectorAll('.input');elsP.forEach((el) => {el.classList.toggle('hidden-div');});
+	}
+}
+if (localStorage.getItem('chk') == "true") {
+document.getElementById("chk").setAttribute('checked','checked');
+<!-- document.querySelector('.input').classList.toggle('hidden-div'); -->
+const elsP = document.querySelectorAll('.input');elsP.forEach((el) => {el.classList.toggle('hidden-div');});
+}
+
+</script>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
