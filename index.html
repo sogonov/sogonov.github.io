@@ -19,15 +19,13 @@
 	<link rel="icon" type="image/png" href="img/favicon.png?1" sizes="32x32">
 </head>
 
-
+<!-- Календарь(скрипт не мой, взят из просторов интернета) -->
 <table id="calendar2" class="hide-on-mobile">
   <thead>
     <tr><td>‹<td colspan="5"><td>>
     <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
   <tbody>
 </table>
-
-<!-- Календарь(скрипт не мой, взят из просторов интернета) -->
 <script>
 function Calendar2(id, year, month) {
 var Dlast = new Date(year,month+1,0).getDate(),
@@ -36,20 +34,12 @@ var Dlast = new Date(year,month+1,0).getDate(),
     DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay(),
     calendar = '<tr>',
     month=["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
-if (DNfirst != 0) {
-  for(var  i = 1; i < DNfirst; i++) calendar += '<td>';
-}else{
-  for(var  i = 0; i < 6; i++) calendar += '<td>';
-}
+if (DNfirst != 0) {for(var  i = 1; i < DNfirst; i++) calendar += '<td>';} else{  for(var  i = 0; i < 6; i++) calendar += '<td>';}
+
 for(var  i = 1; i <= Dlast; i++) {
-  if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
-    calendar += '<td class="today">' + i;
-  }else{
-    calendar += '<td>' + i;
-  }
-  if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
-    calendar += '<tr>';
-  }
+  if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {calendar += '<td class="today">' + i;}
+  else{calendar += '<td>' + i;}
+  if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {calendar += '<tr>';}
 }
 for(var  i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
 document.querySelector('#'+id+' tbody').innerHTML = calendar;
@@ -186,7 +176,7 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 	<li><a href="http://lbts.ssau.ru/index.php/ru/" target="_blank">Cайт кафедры ЛБС</a></li>
 	<li style="font-size: 12pt;">если реклама на ютубе отвлекает от лекций- устанавливаем <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=ru" target="_blank">расширение в браузер</a></li>
 </ul>
-<pre><strong>В этом семестре у нас 4 экзамена: биоживые основы систем, метрология, аэу и микропроцессоры. Еще дифзачет по электродам, курсач у Родина. Остальное(физра, логическая культура, экология, управляемые проекты - зачёты.</strong></pre>
+<pre><strong>В этом семестре у нас 4 экзамена: биоживые основы систем, метрология, аэу и микропроцессоры. Еще дифзачет по электродам. Остальное(физра, логическая культура, экология, управляемые проекты - зачёты.</strong></pre>
 
 <!-- <details class="details2"><summary>Расписание сессии</summary><figure><img src="https://telegra.ph/file/42c52fc0f7f40a5f61dfe.png"></figure></details> -->
 <details class="details2"><summary>Прошлые статьи из telegra.ph</summary>
@@ -216,7 +206,7 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 </details>
 </details>
 
-<details class="details1"><summary>Ссылки-на-bbb-лекций</summary>
+<details  class="details1"><summary>Ссылки-на-bbb-лекций</summary>
 <p hidden id="bbb" class="hide"></p>
 <ol dir="auto">
 	<li><a class="tooltip" href="https://bbb.ssau.ru/b/qyr-n2p-qcu" target="_blank"><strong>Цифровые устройства и микропроцессоры</strong><span><img src="img/sleep3.png"/></span></a></li>
@@ -242,8 +232,6 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 </ol>
 </details>
 
-
-
 <!-- переключение cкрытых позиций -->
 <div class="form-group">
     <div class="form-check">
@@ -252,16 +240,29 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
     </div>
 </div>
 <script>
-document.getElementById('chk').onclick = function() {  
-	if(document.getElementById('chk').checked) {localStorage.setItem('chk', "true");document.querySelector('.input').classList.toggle('hidden-div');} 
-	else {localStorage.setItem('chk', "false");document.querySelector('.input').classList.toggle('hidden-div'); }
+document.getElementById('chk').onclick = function() {
+	if(document.getElementById('chk').checked) {
+	localStorage.setItem('chk', "true"); 
+	const disguise = document.querySelectorAll('.input');
+	disguise.forEach((el) => {el.classList.toggle('hidden-div');});
+	} 
+	else {
+	localStorage.setItem('chk', "false");
+	const disguise = document.querySelectorAll('.input');
+	disguise.forEach((el) => {el.classList.toggle('hidden-div');});
+	}
 }
-if (localStorage.getItem('chk') == "true") {document.getElementById("chk").setAttribute('checked','checked');document.querySelector('.input').classList.toggle('hidden-div');}
+if (localStorage.getItem('chk') == "true") {
+document.getElementById("chk").setAttribute('checked','checked');
+const disguise = document.querySelectorAll('.input');
+disguise.forEach((el) => {el.classList.toggle('hidden-div');});
+}
+
 </script>
 
 
 <h4 id="bomzhs"><a href="#contents">Биофизические основы живых систем</a></h4>
-<ul>
+<ul >
 	<li title="не говорите что Ананасович">Зайнулин Руслан Анасович</li>
 	<li><a href="https://docs.google.com/spreadsheets/d/1rn_2RE17SCqnFEtwQduFk6Bcr2uBKCwSbGDwG6SzTfU/edit#gid=0" target="_blank">табличка про доклады на семинарах</a></li>
 </ul>
@@ -282,19 +283,25 @@ if (localStorage.getItem('chk') == "true") {document.getElementById("chk").setAt
 	<li>лектор: Кудрявцев Илья Александрович - <a href="mailto:rtf@ssau.ru">rtf@ssau.ru</a> , <a href="mailto:iep@ssau.ru">iep@ssau.ru</a></li>
 	<li>семер/лабник: Корнилин Дмитрий Владимирович <!--a href="mailto:iep@ssau.ru">iep@ssau.ru</a--></li>
 </ul>
-<details class="details1"><summary>методички, учебники, курс на мудле</summary>
-<ul><li><a href="https://do.ssau.ru/moodle/enrol/index.php?id=332" target="_blank">Вероятно, это наш курс на moodle</a></li></ul>
-	<details class="details2"><summary title="которые никто не откроет даже">книжки</summary>
-		<ul>
-			<li><a href="https://biokek.ml/ddam/Liter.png" target="_blank">Cписк от Ильи Александровича</a></li>
-			<li><a href="https://biokek.ml/ddam/Harris_rus.pdf" target="_blank">Харрис(перевод)</a></li>
-			<li><a href="https://biokek.ml/ddam/Harris_eng.pdf" target="_blank">Harris(original)</a></li>
-			<li><a href="https://biokek.ml/ddam/opadchiy.pdf" target="_blank">Опадчий_Аналоговая_и_цифровая_ЭЛЕКТРОНИКА</a></li>
-			<li><a href="https://biokek.ml/ddam/ugryumov.zip" target="_blank">Угрюмов Е.П. - Цифровая схемотехника</a></li>
-			<li><a href="https://biokek.ml/ddam/Bezuglov.pdf" target="_blank">Безуглов Д.А., Калиенко И.В. - Цифровые устройства и микропроцессоры </a></li>
-			<li><a href="https://biokek.ml/ddam/brammer.zip" target="_blank">Браммер Ю.А. - Цифровые устройства </a></li>
-		</ul>
-	</details>
+<details class="details1"><summary>Лабы, moodle etc</summary>
+<ul>
+	<li><a href="https://do.ssau.ru/moodle/enrol/index.php?id=332" target="_blank">наш курс на moodle</a></li>
+	<li><a title="eсли не открывается, попробуйте VPN или переезд в другую страну." href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" target="_blank">Скачать Ltspice</a></li>
+	<li class="input hidden-div"><a href="https://disk.yandex.ru/d/Y-qpy8xbwUKUtQ" target="_blank">Скачать Ltspice c моего яндекс-диска</a></li>
+</ul>
+</details>
+
+
+<details class="details2"><summary title="которые никто не откроет даже">книжки</summary>
+	<ul>
+		<li><a href="https://biokek.ml/ddam/Liter.png" target="_blank">Cписк от Ильи Александровича</a></li>
+		<li><a href="https://biokek.ml/ddam/Harris_rus.pdf" target="_blank">Харрис(перевод)</a></li>
+		<li><a href="https://biokek.ml/ddam/Harris_eng.pdf" target="_blank">Harris(original)</a></li>
+		<li><a href="https://biokek.ml/ddam/opadchiy.pdf" target="_blank">Опадчий_Аналоговая_и_цифровая_ЭЛЕКТРОНИКА</a></li>
+		<li><a href="https://biokek.ml/ddam/ugryumov.zip" target="_blank">Угрюмов Е.П. - Цифровая схемотехника</a></li>
+		<li><a href="https://biokek.ml/ddam/Bezuglov.pdf" target="_blank">Безуглов Д.А., Калиенко И.В. - Цифровые устройства и микропроцессоры </a></li>
+		<li><a href="https://biokek.ml/ddam/brammer.zip" target="_blank">Браммер Ю.А. - Цифровые устройства </a></li>
+	</ul>
 </details>
 
 
@@ -339,7 +346,8 @@ if (localStorage.getItem('chk') == "true") {document.getElementById("chk").setAt
 
 
 <h4 id="ipievmp"><a href="#contents">Изм. преобразователи и электроды в мед. приборах</a></h4>
-<ul><li>Воронов Константин Евгеньевич - <a href="mailto:voronov.ke@ssau.ru">voronov.ke@ssau.ru</a></li>
+<ul>
+<li>Воронов Константин Евгеньевич - <a href="mailto:voronov.ke@ssau.ru">voronov.ke@ssau.ru</a></li>
 <li style="font-size:12pt"><a href="https://disk.yandex.ru/d/6On3vWjNBUzSLQ" target="_blank">диск с материалами</a></li>
 
 </ul>
@@ -347,39 +355,36 @@ if (localStorage.getItem('chk') == "true") {document.getElementById("chk").setAt
 	<ul><li><a href="https://biokek.ml/electrods/L/L1.pdf" target="_blank">Лекция 1(05.09.2022)</a></li></ul>
 </details>
 <details class="details2"><summary>Книги</summary>
-		<ul>
+	<ul>
 		<li><a href="https://biokek.ml/electrods/Ash_Zh_1.pdf" target="_blank">Аш Ж. и др. - Датчики измерительных систем. кн.1 (1992)</a></li>
 		<li><a href="https://biokek.ml/electrods/Ash_Zh_2.pdf" target="_blank">Аш Ж. и др. - Датчики измерительных систем. кн.2 (1992)</a></li>
 	</ul>
 </details>
 
-
 <h4 id="upvpd"><a href="#contents">Упр. проектами в профессиональной деятельности</a></h4>
-<ul>
-	<li title="старший преподаватель кафедры ЛБС (314-18)">Христофорова Юлия Александровна - <a href="mailto:khristoforovajulia@gmail.com">khristoforovajulia@gmail.com</a></li>
-</ul>
+<ul><li title="старший преподаватель кафедры ЛБС (314-18)">Христофорова Юлия Александровна - <a href="mailto:khristoforovajulia@gmail.com">khristoforovajulia@gmail.com</a></li></ul>
 <details class="details1"><summary></summary> </details>
-
 
 <h4 id="eklg"><a href="#contents">Экология</a></h4>
 <ul>
 	<li>лектор: Колесниченко Ирина Николаевна - <a href="mailto:irniks@mail.ru">irniks@mail.ru</a></li>
 	<li>лабник: Платонов Владимир Игоревич - <a href="mailto:rovvv@yandex.ru">rovvv@yandex.ru</a></li>
 </ul>
-<details class="details1"><summary></summary></details>
-
+<details class="details1"><summary>Книжки и другая дрянь</summary>
+<ul>
+	<li><a href="https://biokek.ml/ecology/liter.png" target="_blank">Cписок от Ирины Николаевны</a></li>
+	<li><a href="http://repo.ssau.ru/bitstream/Uchebnye-posobiya/Vvedenie-v-obshuu-ekologiu-Elektronnyi-resurs-ucheb-posobie-68679/1/Колесниченко%20И.Н.%20Введение.pdf" target="_blank">Пособие</a></li>
+</ul>
+</details>
 
 <h4 id="kltrlg"><a href="#contents">Культурология</a></h4>
 <ul>	
 	<li>лектор: Журавлев Сергей Иванович <a href="mailto:graygraf@mail.ru">graygraf@mail.ru</a></li>
 	<li>семер:  Казанцева Светлана Генриховна </li>
 </ul>
-
-<details class="details1"><summary></summary></details>
-
+<details class="details1"><summary>Ничего не понятно и неинтересно</summary></details>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
 
 <ul><li>Создано на базе <a href="https://telegra.ph">telegra.ph</a> </li></ul>
 </article>

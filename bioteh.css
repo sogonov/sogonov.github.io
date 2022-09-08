@@ -1,3 +1,9 @@
+/* body { */
+	/* background-image: url('img/page.png'); */
+	 /* background-repeat: repeat-y; */
+	 /* background-size: 100%; */
+   /* } */
+
 #chk {
     position:fixed;
 	bottom: -1px; /*Координата сверху*/
