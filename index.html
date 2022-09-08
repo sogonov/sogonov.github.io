@@ -86,6 +86,8 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 <div class="tl_page">
 <main class="tl_article tl_article_editable">
 <article id="_tl_editor" class="tl_article_content">
+
+
 <!-- переключение темы -->
 <label class="dark-version">
     <input type="checkbox" onchange="toggledark()" id="toggledark">
@@ -98,6 +100,8 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 	if (localStorage.getItem('theme') === 'dark') {document.body.classList.add('dark');document.getElementById('toggledark').checked = true;}
 	else {document.body.classList.remove('dark');document.getElementById('toggledark').checked = false;}
 </script>
+
+
 
 <!-- Сегодняшняя дата в заголовок страницы -->
 <h2 id="datetime"></h2>
@@ -150,6 +154,10 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 	</details>
 	<details class="details2"><summary>Расписания прошедших недель</summary>	
 	<figure><img src="rasp/1.png"><figcaption>1</figcaption></figure>
+	<!-- <figure><img src="rasp/2.png"><figcaption>2</figcaption></figure> -->
+	<!-- <figure><img src="rasp/3.png"><figcaption>3</figcaption></figure> -->
+	<!-- <figure><img src="rasp/4.png"><figcaption>4</figcaption></figure> -->
+	<!-- <figure><img src="rasp/5.png"><figcaption>5</figcaption></figure> -->
 	</details> 
 </details>
 <details id="contents" class="details1"><summary title="(старый механизм навигации снова работает - заголовки предметов вернут на оглавление..)">Оглавление</summary>
@@ -262,9 +270,6 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 </ul>
 </details>
 
-
-
-
 <details class="details2"><summary title="которые никто не откроет даже">книжки</summary>
 	<ul>
 		<li><a href="https://biokek.ml/ddam/Liter.png" target="_blank">Cписк от Ильи Александровича</a></li>
@@ -357,7 +362,7 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 </ul>
 <details class="details1"><summary>Ничего не понятно и неинтересно</summary></details>
 
-<!-- переключение cкрытых позиций -->
+<!-- переключение cкрытых от лишних глаз позиций -->
 <div class="form-group">
     <div class="form-check">
         <input type="checkbox"  id="chk">
@@ -367,20 +372,18 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 <script>
 document.getElementById('chk').onclick = function() {
 	if(document.getElementById('chk').checked) {
-	localStorage.setItem('chk', "true");
-	<!-- document.querySelector('.input').classList.toggle('hidden-div'); -->
-	const elsP = document.querySelectorAll('.input');elsP.forEach((el) => {el.classList.toggle('hidden-div');});
+		localStorage.setItem('chk', "true");
+		const disguise = document.querySelectorAll('.input');
+		disguise.forEach((el) => {el.classList.toggle('hidden-div');});
 	} 
 	else {
-	localStorage.setItem('chk', "false");
-	<!-- document.querySelector('.input').classList.toggle('hidden-div');  -->
-	const elsP = document.querySelectorAll('.input');elsP.forEach((el) => {el.classList.toggle('hidden-div');});
+		localStorage.setItem('chk', "false");
+		const disguise = document.querySelectorAll('.input');disguise.forEach((el) => {el.classList.toggle('hidden-div');});
 	}
 }
 if (localStorage.getItem('chk') == "true") {
-document.getElementById("chk").setAttribute('checked','checked');
-<!-- document.querySelector('.input').classList.toggle('hidden-div'); -->
-const elsP = document.querySelectorAll('.input');elsP.forEach((el) => {el.classList.toggle('hidden-div');});
+	document.getElementById("chk").setAttribute('checked','checked');
+	const disguise = document.querySelectorAll('.input');disguise.forEach((el) => {el.classList.toggle('hidden-div');});
 }
 
 </script>
