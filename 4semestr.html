@@ -73,39 +73,40 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 	else if (hour >= 19 && hour < 24) {document.getElementById("contArea").innerHTML = '<img src="https://biokek.surge.sh/son.png" alt="" />';} 
 	else if (hour >= 0 && hour < 7) {document.getElementById("contArea").innerHTML = '<img src="https://biokek.surge.sh/son.png" alt="" />';};
 </script-->
-<script>function toggledark() {
-    if (localStorage.getItem('theme') === 'dark') {
-        localStorage.removeItem('theme');
-        document.body.classList.remove("dark");
-        } else {
-        localStorage.setItem('theme', 'dark');
-        document.body.classList.add("dark");
-    }
-}
-if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark');
-    document.getElementById('toggledark').checked = true;
-} else {
-    document.body.classList.remove('dark');
-    document.getElementById('toggledark').checked = false;
-}</script>
+
 <body>
 <div class="tl_page_wrap">
 <div class="tl_page">
 <main class="tl_article tl_article_editable">
 
 <article id="_tl_editor" class="tl_article_content ql-container ql-disabled">
+
+<!-- переключение темы -->
 <label class="dark-version">
     <input type="checkbox" onchange="toggledark()" id="toggledark">
     <span class="toggledark round"></span>
 </label>
-<h2 id="datetime"></h2>
 <script>
-var d = new Date();
-var days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
-document.getElementById("datetime").innerHTML = (days[d.getDay()]) + ", " + (d.toLocaleDateString());
+	function toggledark() {
+		if (localStorage.getItem('theme') === 'dark') {localStorage.removeItem('theme');document.body.classList.remove("dark");} 
+		else {localStorage.setItem('theme', 'dark');document.body.classList.add("dark");}}
+	if (localStorage.getItem('theme') === 'dark') {document.body.classList.add('dark');document.getElementById('toggledark').checked = true;}
+	else {document.body.classList.remove('dark');document.getElementById('toggledark').checked = false;}
 </script>
 
+
+
+<!-- Сегодняшняя дата в заголовок страницы -->
+<h2 id="datetime"></h2>
+<script>
+	var d = new Date();
+	var days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+	document.getElementById("datetime").innerHTML = (days[d.getDay()]) + ", " + (d.toLocaleDateString());
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- Информационные сообщения слева страницы -->
 <!-- <p id="mess" class="hide-on-mobile"><strong>про АУЕ на 16 неделе</strong><br>понедельник с 11:30<br class="inline"> -->
 <!-- 25 первый зачет, 1 июня второй для несдавших<br class="inline"> -->
 	<!-- <br class="inline"> -->
@@ -117,10 +118,14 @@ document.getElementById("datetime").innerHTML = (days[d.getDay()]) + ", " + (d.t
 <!-- <br class="inline"> -->
 <!-- и две пары с с 9:45 9 июня -->
 <!-- </p>  -->
-<p id="semestr" class="hide-on-mobile"><a href="index.html">Вернуться</a></p>
-<p hidden class="hide">ссылка на сайт для браузера(можно нажать даже из этого окошка предпросмотра)- https://biokek.surge.sh/ &#8195;&#8195;&#8195;&#9745;максимально сексуально теперь&#9745;</p><p class="ass" style="font-size: 8pt">в статье появились котики(только для браузера)</p>
 
-<details class="details1"><summary title="(но старый механизм навигации работает - заголовки предметов вернут на развернутое оглавление)">Оглавление теперь сворачиваемое</summary><p hidden id="Оглавление">Оглавление</p><ol><li><a href="#%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0">Математика</a></li><li><a href="#%D0%90%D1%81%D0%B8%D1%81">Анализ сигналов и сосис</a></li><li><a href="#%D0%90%D0%A3%D0%95">Аналоговые электронные устройства</a></li><li><a href="#%D0%A1%D0%9A%D0%9F">Системы компьютерного проектирования</a></li><li><a href="#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-%D0%BF%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D1%8B">Основы профессиональной культуры</a></li><li><a href="#%D0%A4%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D1%8F">Философия</a></li><li><a href="#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-%D0%B1%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8">Основы биологии</a></li></ol></details>
+<!-- текст, отображаемый на превью ссылки instant view -->
+<p hidden class="hide">ссылка на сайт для браузера(можно нажать даже из этого окошка предпросмотра)- https://biokek.ml/ &#8195;&#8195;&#8195;&#8195;&#8195;&#9745;максимально сексуально теперь&#9745;</p>
+
+<p id="semestr" class="hide-on-mobile"><a href="index.html">Вернуться</a></p>
+
+
+<details class="details1"><summary>Оглавление теперь сворачиваемое</summary><p hidden id="Оглавление">Оглавление</p><ol><li><a href="#%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0">Математика</a></li><li><a href="#%D0%90%D1%81%D0%B8%D1%81">Анализ сигналов и сосис</a></li><li><a href="#%D0%90%D0%A3%D0%95">Аналоговые электронные устройства</a></li><li><a href="#%D0%A1%D0%9A%D0%9F">Системы компьютерного проектирования</a></li><li><a href="#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-%D0%BF%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D1%8B">Основы профессиональной культуры</a></li><li><a href="#%D0%A4%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D1%8F">Философия</a></li><li><a href="#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-%D0%B1%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8">Основы биологии</a></li></ol></details>
 
 
 <details class="details1"><summary>немного букв о том, как жить</summary>
@@ -259,13 +264,12 @@ document.getElementById("datetime").innerHTML = (days[d.getDay()]) + ", " + (d.t
 </details>
 
 <h4 id="АУЕ"><a href="#%D0%9E%D0%B3%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">АУЕ</a></h4>
-<ul><li>Родин Дмитрий Владимирович - <a href="mailto:https://biokek.ml/rodin@ssau.ru">https://biokek.ml/rodin@ssau.ru</a></li></ul>
+<ul><li>Родин Дмитрий Владимирович - <a href="mailto:https://biokek.ml/rodin@ssau.ru">https://biokek.ml/rodin@ssau.ru</a></li>
+<li><a href="https://biokek.ml/rodin/Lek.pdf" target="_blank">лекции пдф</a></li></ul>
 <details class="details1"><summary title="которые никто не откроет даже">книжки</summary><ul><li><a href="https://disk.yandex.ru/i/IfPwspxJFy0mhg" target="_blank">Paul Horowitz, Winfield Hill The Art of Electronics, Third Edition</a>- учим английский во имя Родина и своей будущей успешной жизни</li><li><a href="https://disk.yandex.ru/d/Ifvi_gpNNPkJFw" target="_blank">Русская версия Хорохиля</a></li><li><a href="https://disk.yandex.ru/i/gpf281CYeeDTOA" target="_blank">Зевеке</a>- повторяем ОТЦ</li><li><a href="https://disk.yandex.ru/d/jXXijQWre9XhsQ" target="_blank">Титце Шенк</a>- лучше не лезьте, не лезьтe</li></ul></details>
 
 <details class="details2"><summary>Лабы(методички и микрокэпы)</summary><details class="details3"><summary>нормальный микрокэп</summary><figure><img src="https://telegra.ph/file/d4c87f7a7829a6d9d931f.png"><figcaption>инструкция</figcaption></figure><a href="https://disk.yandex.ru/d/DvynCCyry3_7Zw">сам файл. распаковать в корень диска С</a></details><ul><li><a href="https://www.spectrum-soft.com/download/download.shtm" target="_blank">Микрокэп</a></li><li><a href="https://telegra.ph/aue-03-26#1-%D0%BB%D0%B0%D0%B1%D0%B0">1 лаба</a></li><li><a href="https://telegra.ph/aue-03-26#2-%D0%BB%D0%B0%D0%B1%D0%B0">2 лаба</a></li><li><a href="https://telegra.ph/aue-03-26#3-%D0%BB%D0%B0%D0%B1%D0%B0">3 лаба</a></li><li><a href="https://telegra.ph/aue-03-26#4-%D0%BB%D0%B0%D0%B1%D0%B0">4 лаба - не нужна</a></li></ul></details>
-
-<ul><li><a href="https://biokek.ml/rodin/Lek.pdf" target="_blank">лекции пдф</a></li></ul>
-<details class="details4"><summary>Домашки и расчетки</summary>
+<details class="details3"><summary>Домашки и расчетки</summary>
 <figure><img class="dz"src="https://telegra.ph//file/d4446144f4db8f7e7ae65.png"><figcaption>первая домашка</figcaption></figure>
 <ul><li><a href="https://youtu.be/PtDTkrb5W6w?list=PLGLpQPCN5inbbjqhzdgzAwxA3SzoKRNwN&t=4506">таймкод про первую домашку</a></li>
 <li><a href="https://biokek.ml/rodin/OE.pdf" target="_blank">методичка первая расчетка(графоанал. метод)</a></li>
