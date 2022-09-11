@@ -4,15 +4,19 @@
 	 /* background-size: 100%; */
    /* } */
 
+
+/* скрываем что-то от ненужных глаз */
+.hidden-div {
+  display: none;
+}
 #chk {
     position:fixed;
 	bottom: -1px; /*Координата сверху*/
-	left: -1px; /*Координата слева*/
+	/* left: -1px; /*Координата слева*/ 
 	width: 5px;
     height: 5px;
     cursor: pointer;
-    background: rgba(40,40,40,0.2);
-  
+    background: #dcdbdb;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -22,7 +26,7 @@
 }
 
 #chk:checked {
-    background: rgba(40,40,40,0.7);
+    background: #ccccccb3;
 }
 
 .checkbox {
@@ -35,10 +39,7 @@
 }
 
 
-/* скрываем что-то от ненужных глаз */
-.hidden-div {
-  display: none;
-}
+
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
@@ -100,7 +101,6 @@ body.dark::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: #686868;    /* цвет плашки */
   border-radius: 20px;       /* закругления плашки */
-  /* border: 3px solid orange;  /* padding вокруг плашки */ */
 }
 
 /* перекрас под темную тему */
