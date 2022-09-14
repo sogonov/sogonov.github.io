@@ -13,10 +13,10 @@
     position:fixed;
 	bottom: -1px; /*Координата сверху*/
 	/* left: -1px; /*Координата слева*/ 
-	width: 7px;
-    height: 7px;
+	width: 10px;
+    height: 10px;
     cursor: pointer;
-    background: #edededb3;
+    background: #ffffff;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -330,7 +330,7 @@ td{
  position: fixed; 
  top: 260px; /*Координата сверху*/
  left: 2%; /*Координата слева*/
-  width: 250px;
+  width: 240px;
   border-radius: 10px;
   font-size: 15px;
   font-family:CustomSerif,Georgia,Cambria,'Times New Roman',serif;
@@ -340,7 +340,8 @@ td{
 	padding:0;
 	margin:0;
 	color:rgba(0,0,0,.8);
-padding-left:10px
+	padding-left:5px; 
+	padding-right:5px
 }
 
 
