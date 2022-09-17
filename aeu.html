@@ -1,0 +1,149 @@
+<!DOCTYPE html><html><head>
+<title>и снова Telegraph</title>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link type="text/css" rel="stylesheet" href="bioteh.css?v=9" id="theme-link"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="MobileOptimized" content="176">
+<meta name="HandheldFriendly" content="True">
+<meta property="og:url" content="https://biokek.surge.sh/" />
+<meta property="og:image" content="https://telegra.phhttps://telegra.ph/file/6e2eeb42bfb8bbc48166b.png" />
+<!-- <link rel="shortcut icon" href="favicon.ico?1" type="image/x-icon"> -->
+<link rel="icon" type="image/png" href="img/favicon.png?1" sizes="16x16">
+<link rel="icon" type="image/png" href="img/favicon.png?1" sizes="32x32">
+</head>
+
+
+<table id="calendar2" class="hide-on-mobile">
+  <thead>
+    <tr><td>‹<td colspan="5"><td>>
+    <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+  <tbody>
+</table>
+<!-- Календарь -->
+<script>
+function Calendar2(id, year, month) {
+var Dlast = new Date(year,month+1,0).getDate(),
+    D = new Date(year,month,Dlast),
+    DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay(),
+    DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay(),
+    calendar = '<tr>',
+    month=["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+if (DNfirst != 0) {
+  for(var  i = 1; i < DNfirst; i++) calendar += '<td>';
+}else{
+  for(var  i = 0; i < 6; i++) calendar += '<td>';
+}
+for(var  i = 1; i <= Dlast; i++) {
+  if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
+    calendar += '<td class="today">' + i;
+  }else{
+    calendar += '<td>' + i;
+  }
+  if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
+    calendar += '<tr>';
+  }
+}
+for(var  i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
+document.querySelector('#'+id+' tbody').innerHTML = calendar;
+document.querySelector('#'+id+' thead td:nth-child(2)').innerHTML = month[D.getMonth()] +' '+ D.getFullYear();
+document.querySelector('#'+id+' thead td:nth-child(2)').dataset.month = D.getMonth();
+document.querySelector('#'+id+' thead td:nth-child(2)').dataset.year = D.getFullYear();
+if (document.querySelectorAll('#'+id+' tbody tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
+    document.querySelector('#'+id+' tbody').innerHTML += '<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;';
+}
+}
+Calendar2("calendar2", new Date().getFullYear(), new Date().getMonth());
+// переключатель минус месяц
+document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(1)').onclick = function() {
+  Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month)-1);
+}
+// переключатель плюс месяц
+document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function() {
+  Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month)+1);
+}
+</script>
+<!-- переключение темы -->
+
+<!-- картинки по времени суток -->
+<!-- <div id="contArea"></div> -->
+<!-- <script> -->
+    <!-- day = new Date(); -->
+    <!-- hour = day.getHours(); -->
+    <!-- if (hour >= 7 && hour < 12) {document.getElementById("contArea").innerHTML = '<img src="https://biokek.surge.sh/son1.png" alt="" />';}  -->
+	<!-- else if (hour >= 12 && hour < 19) {document.getElementById("contArea").innerHTML = '<img src="https://biokek.surge.sh/son3.png" alt="" />';} -->
+	<!-- else if (hour >= 19 && hour < 24) {document.getElementById("contArea").innerHTML = '<img src="https://biokek.surge.sh/son.png" alt="" />';}  -->
+	<!-- else if (hour >= 0 && hour < 7) {document.getElementById("contArea").innerHTML = '<img src="https://biokek.surge.sh/son.png" alt="" />';}; -->
+<!-- </script> -->
+<body>
+<div class="tl_page_wrap">
+<div class="tl_page">
+<main class="tl_article tl_article_editable">
+<article id="_tl_editor" class="tl_article_content">
+
+
+
+<label class="dark-version">
+    <input type="checkbox" onchange="toggledark()" id="toggledark">
+    <span class="toggledark round"></span>
+</label>
+<script>
+function toggledark() {
+    if (localStorage.getItem('theme') === 'dark') {localStorage.removeItem('theme');document.body.classList.remove("dark");} 
+	else {localStorage.setItem('theme', 'dark');document.body.classList.add("dark");}
+}
+if (localStorage.getItem('theme') === 'dark') {document.body.classList.add('dark');document.getElementById('toggledark').checked = true;}
+else {document.body.classList.remove('dark');document.getElementById('toggledark').checked = false;}
+</script>
+<h2 id="datetime"></h2>
+<script>
+var d = new Date();
+var days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+document.getElementById("datetime").innerHTML = (days[d.getDay()]) + ", " + (d.toLocaleDateString());
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<!-- <p id="mess" class="hide-on-mobile"><strong>про АУЕ на 16 неделе</strong><br>понедельник с 11:30<br class="inline"> -->
+<!-- 25 первый зачет, 1 июня второй для несдавших<br class="inline"> -->
+	<!-- <br class="inline"> -->
+<!-- <br class="inline"> -->
+<!-- <strong>про Буша</strong><br class="inline"> -->
+<!-- контрольная и дедлайн по бушевику 27  -->
+<!-- <br class="inline"> -->
+<!-- будет одна пара в 9:45 30-го -->
+<!-- <br class="inline"> -->
+<!-- и две пары с с 9:45 9 июня -->
+<!-- </p>  -->
+<p hidden class="hide">ссылка на сайт для браузера(можно нажать даже из этого окошка предпросмотра)- https://biokek.surge.sh/ &#8195;&#8195;&#8195;&#9745;максимально сексуально теперь&#9745;</p>
+<p id="semestr" class="hide-on-mobile"><a href="index.html">Вернуться</a></p>
+
+<h1 dir="auto" data-placeholder="Title" data-label="Title">Лабы аэу 5 семестр</h1> 
+<details class="details2"><summary>первая лаба</summary>
+<ul><li><a href="https://biokek.ml/rodin/lr5.pdf" target="_blank">Пятая лабораторная PDF(первая в этом семестре)</a></li>
+</ul>
+	<figure><img src="rodin/img/38.jpg"><figcaption></figcaption></figure>
+	<figure><img src="rodin/img/39.jpg"><figcaption></figcaption></figure>
+	<figure><img src="rodin/img/40.jpg"><figcaption></figcaption></figure>
+	<figure><img src="rodin/img/41.jpg"><figcaption></figcaption></figure>
+	<figure><img src="rodin/img/42.jpg"><figcaption></figcaption></figure>
+	<figure><img src="rodin/img/43.jpg"><figcaption></figcaption></figure>
+	<figure><img src="rodin/img/44.jpg"><figcaption></figcaption></figure>
+	<figure><img src="rodin/img/45.jpg"><figcaption></figcaption></figure>
+	<figure><img src="rodin/img/46.jpg"><figcaption></figcaption></figure>
+	<figure><img src="rodin/img/47.jpg"><figcaption></figcaption></figure>
+</details> 
+
+
+<ul><li>Создано на базе <a href="https://telegra.ph">telegra.ph</a> </li></ul>
+
+</article>
+</main>
+</div>
+</div>
+</body>
+</html>
