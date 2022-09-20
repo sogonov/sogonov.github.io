@@ -189,7 +189,7 @@ body.dark {
 @media screen and (max-width: 900px) {
 .dark-version{
 	position: absolute;
-	top: 10px; /*Координата сверху*/
+	top: 0%; /*Координата сверху*/
 	left: 80%; /*Координата слева*/
 	}
 .dark-version .toggledark {
