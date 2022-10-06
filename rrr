@@ -31,3 +31,28 @@ PORT ( C
 D 1 : in STD LOGIC;
 Q: out STD LOGIC) ; END COMPONENT;
 signal D 0 : std logic := '0'; signal D 1 : std logic := '0'; signal C : std logic := 'O'; --declare outputs and initialize them signal Q : std logic := '0';
+
+
+
+
+
+
+uut: fdc PORT MAP (
+	C => C,
+	D_0 => D_0,
+	D_1=> D_1,
+	Q => Q) ;
+clock: process 
+begin
+	C <= '0'; wait for 5 ns;
+	C <= '1'; wait for 5 ns; 
+end process;
+
+tb : process
+begin
+	D_0 <= '0'; D_1 <= '0'; wait for 50 ns;
+	D_0 <= '1'; wait for 20 ns; D_1 <= '1'; wait for 80 ns;
+	D_1 <= '0'; wait for 40 ns; D_1 <= '0'; wait for 40 ns;
+	D_0 <= '1'; wait for 12 ns; D_1 <= '1'; wait for 17 ns;
+	D_0 <= '0'; D_1 <= '0'; wait for 50 ns;
+end process;
