@@ -21,3 +21,13 @@ Q<= X 0 and X 1;
 end if;
 end process;
 end Behavioral;
+
+
+
+
+COMPONENT fdc -' fdc' is the name of the module needed to be tested.
+PORT ( C
+: in STD LOGIC; D 0 : in STD LOGIC;
+D 1 : in STD LOGIC;
+Q: out STD LOGIC) ; END COMPONENT;
+signal D 0 : std logic := '0'; signal D 1 : std logic := '0'; signal C : std logic := 'O'; --declare outputs and initialize them signal Q : std logic := '0';
