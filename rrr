@@ -1,0 +1,23 @@
+library IEEE; use IEEE.STD LOGIC 1164.ALL;
+The VHDL language uses ' to indicate a comment.
+entity fdc is Port ( D_0, D 1 : in STD LOGIC;
+C : in STD LOGIC;
+Q : out STD LOGIC);
+end fdc;
+architecture Behavioral of fdc is
+signal x_0, x 1 : STD_LogIC;
+begin
+process (C)
+begin
+if rising edge(C) then
+X0 <= D_0;
+x 1 <= D_1;
+end if;
+end process;
+process (C)
+begin
+if rising edge(C) then
+Q<= X 0 and X 1;
+end if;
+end process;
+end Behavioral;
