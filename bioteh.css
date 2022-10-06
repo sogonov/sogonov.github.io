@@ -9,6 +9,7 @@
 .hidden-div {
   display: none;
 }
+
 #chk {
     position:fixed;
 	bottom: -1px; /*Координата сверху*/
