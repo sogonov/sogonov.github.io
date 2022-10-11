@@ -9,7 +9,8 @@
 .hidden-div {
   display: none;
 }
-
+.details4 ol{height:200px; width:90%;}
+.details4 ol{overflow:hidden; overflow-y:scroll;}
 #chk {
     position:fixed;
 	bottom: -1px; /*Координата сверху*/
@@ -91,17 +92,38 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
 
+ol::-webkit-scrollbar {
+  width: 14px;               /* ширина scrollbar */
+  
+}
+ol::-webkit-scrollbar-track {
+  background: #e6e6e6;        /* цвет дорожки светлая тема*/
+  border-radius: 20px;
+}
+.dark ol::-webkit-scrollbar-track {
+  background: #343434;        /* цвет дорожки */
+}
+ol::-webkit-scrollbar-thumb {
+  background-color: #686868;    /* цвет плашки */
+  border-radius: 20px;       /* закругления плашки */
+}
+
+
 
 
 /* полоса прокрутки */
 body::-webkit-scrollbar {
   width: 14px;               /* ширина scrollbar */
 }
-body::-webkit-scrollbar-track {
+
+  
+}body::-webkit-scrollbar-track {
   background: #e6e6e6;        /* цвет дорожки светлая тема*/
+  border-radius: 20px;
 }
 body.dark::-webkit-scrollbar-track {
   background: #343434;        /* цвет дорожки */
+  border-radius: 20px;
 }
 body::-webkit-scrollbar-thumb {
   background-color: #686868;    /* цвет плашки */
