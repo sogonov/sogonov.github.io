@@ -1,0 +1,136 @@
+<!DOCTYPE html><html><head>
+<title>и снова Telegraph</title>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link type="text/css" rel="stylesheet" href="bioteh.css?v=9" id="theme-link"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="MobileOptimized" content="176">
+<meta name="HandheldFriendly" content="True">
+<meta property="og:url" content="https://biokek.surge.sh/" />
+<meta property="og:image" content="https://telegra.phhttps://telegra.ph/file/6e2eeb42bfb8bbc48166b.png" />
+<!-- <link rel="shortcut icon" href="favicon.ico?1" type="image/x-icon"> -->
+<link rel="icon" type="image/png" href="img/favicon.png?1" sizes="16x16">
+<link rel="icon" type="image/png" href="img/favicon.png?1" sizes="32x32">
+</head>
+
+
+<table id="calendar2" class="hide-on-mobile">
+  <thead>
+    <tr><td>‹<td colspan="5"><td>>
+    <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+  <tbody>
+</table>
+<!-- Календарь -->
+<script>
+function Calendar2(id, year, month) {
+var Dlast = new Date(year,month+1,0).getDate(),
+    D = new Date(year,month,Dlast),
+    DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay(),
+    DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay(),
+    calendar = '<tr>',
+    month=["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+if (DNfirst != 0) {
+  for(var  i = 1; i < DNfirst; i++) calendar += '<td>';
+}else{
+  for(var  i = 0; i < 6; i++) calendar += '<td>';
+}
+for(var  i = 1; i <= Dlast; i++) {
+  if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
+    calendar += '<td class="today">' + i;
+  }else{
+    calendar += '<td>' + i;
+  }
+  if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
+    calendar += '<tr>';
+  }
+}
+for(var  i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
+document.querySelector('#'+id+' tbody').innerHTML = calendar;
+document.querySelector('#'+id+' thead td:nth-child(2)').innerHTML = month[D.getMonth()] +' '+ D.getFullYear();
+document.querySelector('#'+id+' thead td:nth-child(2)').dataset.month = D.getMonth();
+document.querySelector('#'+id+' thead td:nth-child(2)').dataset.year = D.getFullYear();
+if (document.querySelectorAll('#'+id+' tbody tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
+    document.querySelector('#'+id+' tbody').innerHTML += '<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;';
+}
+}
+Calendar2("calendar2", new Date().getFullYear(), new Date().getMonth());
+// переключатель минус месяц
+document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(1)').onclick = function() {
+  Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month)-1);
+}
+// переключатель плюс месяц
+document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function() {
+  Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month)+1);
+}
+</script>
+<!-- переключение темы -->
+
+<!-- картинки по времени суток -->
+<!-- <div id="contArea"></div> -->
+<!-- <script> -->
+    <!-- day = new Date(); -->
+    <!-- hour = day.getHours(); -->
+    <!-- if (hour >= 7 && hour < 12) {document.getElementById("contArea").innerHTML = '<img src="https://biokek.surge.sh/son1.png" alt="" />';}  -->
+	<!-- else if (hour >= 12 && hour < 19) {document.getElementById("contArea").innerHTML = '<img src="https://biokek.surge.sh/son3.png" alt="" />';} -->
+	<!-- else if (hour >= 19 && hour < 24) {document.getElementById("contArea").innerHTML = '<img src="https://biokek.surge.sh/son.png" alt="" />';}  -->
+	<!-- else if (hour >= 0 && hour < 7) {document.getElementById("contArea").innerHTML = '<img src="https://biokek.surge.sh/son.png" alt="" />';}; -->
+<!-- </script> -->
+<body>
+<div class="tl_page_wrap">
+<div class="tl_page">
+<main class="tl_article tl_article_editable">
+<article id="_tl_editor" class="tl_article_content">
+
+
+
+<label class="dark-version">
+    <input type="checkbox" onchange="toggledark()" id="toggledark">
+    <span class="toggledark round"></span>
+</label>
+<script>
+function toggledark() {
+    if (localStorage.getItem('theme') === 'dark') {localStorage.removeItem('theme');document.body.classList.remove("dark");} 
+	else {localStorage.setItem('theme', 'dark');document.body.classList.add("dark");}
+}
+if (localStorage.getItem('theme') === 'dark') {document.body.classList.add('dark');document.getElementById('toggledark').checked = true;}
+else {document.body.classList.remove('dark');document.getElementById('toggledark').checked = false;}
+</script>
+<h2 id="datetime"></h2>
+<script>
+var d = new Date();
+var days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+document.getElementById("datetime").innerHTML = (days[d.getDay()]) + ", " + (d.toLocaleDateString());
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<!-- <p id="mess" class="hide-on-mobile"><strong>про АУЕ на 16 неделе</strong><br>понедельник с 11:30<br class="inline"> -->
+<!-- 25 первый зачет, 1 июня второй для несдавших<br class="inline"> -->
+	<!-- <br class="inline"> -->
+<!-- <br class="inline"> -->
+<!-- <strong>про Буша</strong><br class="inline"> -->
+<!-- контрольная и дедлайн по бушевику 27  -->
+<!-- <br class="inline"> -->
+<!-- будет одна пара в 9:45 30-го -->
+<!-- <br class="inline"> -->
+<!-- и две пары с с 9:45 9 июня -->
+<!-- </p>  -->
+<p hidden class="hide">ссылка на сайт для браузера(можно нажать даже из этого окошка предпросмотра)- https://biokek.surge.sh/ &#8195;&#8195;&#8195;&#9745;максимально сексуально теперь&#9745;</p>
+<p id="semestr" class="hide-on-mobile"><a href="index.html">Вернуться</a></p>
+
+<h1>aye<br></h1><address><br></address><figure><img src="https://legra.ph/file/3f9e9de93c15f061f2680.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/73b6bc1d65f02270bbeca.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/fd19fcc27baaddd1306c7.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/1f8879b1f56e6665ffa1b.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/9464bb112f85eab608b38.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/ee7e2b6953dea091c3aa4.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/a3f9cb4bacda3b91a6f33.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/62d511cb191400a01e6d9.jpg"><figcaption></figcaption></figure><p><br></p><figure><img src="https://legra.ph/file/3ff9e6e6ccf425efd7488.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/b07694936d410ba407ff9.jpg"><figcaption></figcaption></figure><p><br></p><figure><img src="https://legra.ph/file/321f55c68354155c3e4d1.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/669a8f250ef957f47a516.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/f62fc5240798e238b5178.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/c4a343aba8ad3f563611b.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/85338166e03443d40f3d6.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/80949270a3d36e52e74f2.jpg"><figcaption></figcaption></figure><p><br></p><figure><img src="https://legra.ph/file/05afcb23726546bb08377.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/e2c1945b1edf7ea32e9d1.jpg"><figcaption></figcaption></figure><h4 id="лекция-5">лекция 5</h4><figure><img src="https://legra.ph/file/984062b4a9be4752ac2e3.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/58521d749fd71f1246312.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/fe477f0b37cb33defc837.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/d2da9a1bb36120c752fbc.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/fcea1d0267d852b35cbe2.jpg"><figcaption></figcaption></figure><h4 id="лекция-6">лекция 6</h4><p>являлась коллоквиумом</p><h4 id="лекция-7">лекция 7</h4><p>разбор коллоквиума</p><figure><img src="https://legra.ph/file/a1dae335252eb15e23c01.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/92826e671d9b7e40e5728.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/7a29131bd71d205518919.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/c00d0af611c4497fb608b.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/49d95f4f9e1853f9ef72d.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/947a1b33a7a042df03555.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/5bc3ce8d136a3aebc9c3c.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/cae634de04296eb393192.jpg"><figcaption></figcaption></figure><h3 id="9-лекция">9 лекция</h3><figure><img src="https://legra.ph/file/bf5ad5a47badeb9cb2fc6.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/9335f246a6ad7bbc4c3c0.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/3326e70046ab1d2aac4b4.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/80a014659d5fb20e020d1.jpg"><figcaption></figcaption></figure><h4 id="10-лекция">10 лекция</h4><figure><img src="https://legra.ph/file/5b6fe9230caa8ea5d1ea9.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/1714e5edbc89af46f00ae.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/d536228bd58d8f032e5f8.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/1bdb09db90ce37f9b7815.jpg"><figcaption></figcaption></figure><p>Новый семестр</p><h4 id="2-1-лекция">2-1 лекция</h4><figure><img src="https://legra.ph/file/c45cb5d3733e62e42be08.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/e0c2137b47d841623e77c.jpg"><figcaption></figcaption></figure><h4 id="2-2-лекция">2-2 лекция</h4><figure><img src="https://legra.ph/file/b13ea7f354a3a3a334aaa.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/b534605010f908c50dd23.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/c57471130c0ce2b20b73d.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/b8d4f7fde7092faef115f.jpg"><figcaption></figcaption></figure><h4 id="2-3-лекция">2-3 лекция</h4><figure><img src="https://legra.ph/file/3d6df0d98df5d21cadd33.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/b82e83453dbf10bc9b055.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/6f0232f079a8861464f23.jpg"><figcaption></figcaption></figure><h4 id="2-4-лекция">2-4 лекция</h4><figure><img src="https://legra.ph/file/b2a6637d696bbb78b15c9.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/2e7e557b93e612b5b3144.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/5383106f640402e7106eb.jpg"><figcaption></figcaption></figure><figure><img src="https://legra.ph/file/a32af4709e4e1af105cee.jpg"><figcaption></figcaption></figure><h4 id="2-5-лекция(в-процессе)">2-5 лекция(в процессе)</h4><figure><img src="https://legra.ph/file/10322d7ea994f33a4e0a6.jpg"><figcaption></figcaption></figure><p><br></p><figure><img src="https://legra.ph/file/d6d50e2dc523d20d0469a.jpg"><figcaption></figcaption></figure><p><br></p>
+            
+
+
+<ul><li>Создано на базе <a href="https://telegra.ph">telegra.ph</a> </li></ul>
+
+</article>
+</main>
+</div>
+</div>
+</body>
+</html>
