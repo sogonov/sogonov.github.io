@@ -1,7 +1,9 @@
 /* body { */
-	/* background-image: url('img/page.png'); */
-	 /* background-repeat: repeat-y; */
-	 /* background-size: 100%; */
+	/* background-image: url('img/page.png'); */		
+	 /* background-repeat: no-repeat; */
+	 /* background-position: top center; */
+	 /* background-attachment: fixed; */
+	 /* background-size: 9	0%; */
    /* } */
 
 /* скрываем что-то от ненужных глаз */
