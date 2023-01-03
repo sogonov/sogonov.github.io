@@ -157,6 +157,12 @@ body::-webkit-scrollbar-thumb {
   filter: invert(0%) hue-rotate(0deg);
   mix-blend-mode: screen;
 }
+.dark #dot0 img{
+  mix-blend-mode: multiply;
+  filter: invert(0%) hue-rotate(0deg);
+  mix-blend-mode: screen;
+  opacity: 0.3;
+}
 
 body.dark {
     background-color: #191919;
