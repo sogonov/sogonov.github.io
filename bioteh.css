@@ -11,6 +11,8 @@
 /* скрываем что-то от ненужных глаз */
 .hidden-div {
   display: none;
+}.hidden-div1 {
+  display: none;
 }
 .details4 ol{height:200px; width:90%;}
 .details4 ol{overflow:hidden; overflow-y:scroll;}

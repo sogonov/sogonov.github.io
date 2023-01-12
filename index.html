@@ -243,13 +243,13 @@ function movesnow() {
 }
  
 for (i=0;i<=snowmax;i++) {
-    document.body.insertAdjacentHTML("beforeend", "<span id='s"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
-    document.body.insertAdjacentHTML("beforeend", "<span id='s1"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter1+"</span>")
-    document.body.insertAdjacentHTML("beforeend", "<span id='s2"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter2+"</span>")
-    document.body.insertAdjacentHTML("beforeend", "<span id='s3"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter3+"</span>")
-    document.body.insertAdjacentHTML("beforeend", "<span id='s4"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter4+"</span>")
-    document.body.insertAdjacentHTML("beforeend", "<span id='s5"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter5+"</span>")
-    document.body.insertAdjacentHTML("beforeend", "<span id='s6"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter6+"</span>")
+    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s1"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter1+"</span>")
+    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s2"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter2+"</span>")
+    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s3"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter3+"</span>")
+    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s4"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter4+"</span>")
+    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s5"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter5+"</span>")
+    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s6"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter6+"</span>")
 }
 window.onload=initsnow    
 
@@ -658,16 +658,24 @@ document.getElementById('chk').onclick = function() {
 	if(document.getElementById('chk').checked) {
 		localStorage.setItem('chk', "true");
 		const disguise = document.querySelectorAll('.input');
+		const disguise1 = document.querySelectorAll('.snoww');
 		disguise.forEach((el) => {el.classList.toggle('hidden-div');});
+		disguise1.forEach((el1) => {el1.classList.toggle('hidden-div1');});
 	} 
 	else {
 		localStorage.setItem('chk', "false");
-		const disguise = document.querySelectorAll('.input');disguise.forEach((el) => {el.classList.toggle('hidden-div');});
+		const disguise = document.querySelectorAll('.input');
+		const disguise1 = document.querySelectorAll('.snoww');
+		disguise.forEach((el) => {el.classList.toggle('hidden-div');});
+		disguise1.forEach((el1) => {el1.classList.toggle('hidden-div1');});
 	}
 }
 if (localStorage.getItem('chk') == "true") {
 	document.getElementById("chk").setAttribute('checked','checked');
-	const disguise = document.querySelectorAll('.input');disguise.forEach((el) => {el.classList.toggle('hidden-div');});
+	const disguise = document.querySelectorAll('.input');
+	const disguise1 = document.querySelectorAll('.snoww');
+	disguise.forEach((el) => {el.classList.toggle('hidden-div');});
+	disguise1.forEach((el1) => {el1.classList.toggle('hidden-div1');});
 }
 
 
