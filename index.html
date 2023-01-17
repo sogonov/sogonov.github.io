@@ -82,34 +82,9 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
   Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month)+1);
 }
 </script>
-<!-- закрытие спойлеров нажатием вне. выключено, так как хз че делать с вложенными спойлерами -->
-<!-- <script> -->
-<!-- // По клику на тело документа -->
-<!-- document.details.onclick = () => { -->
-  <!-- // Найти все открытые <details> -->
-  <!-- document.body.querySelectorAll('details.details1[open]') -->
-    <!-- // И закрыть каждый из них -->
-    <!-- .forEach(e => e.open = false) -->
-<!-- } -->
-<!-- </script> -->
-
-<!-- картинки по времени суток -->
-<!-- <div id="contArea"></div> -->
-<!-- <script> -->
-    <!-- day = new Date(); -->
-    <!-- hour = day.getHours(); -->
-    <!-- if (hour >= 7 && hour < 12) {document.getElementById("contArea").innerHTML = '<img src="img/son1.png" alt="" />';}  -->
-	<!-- else if (hour >= 12 && hour < 19) {document.getElementById("contArea").innerHTML = '<img src="img/son3.png" alt="" />';} -->
-	<!-- else if (hour >= 19 && hour < 24) {document.getElementById("contArea").innerHTML = '<img src="img/son.png" alt="" />';}  -->
-	<!-- else if (hour >= 0 && hour < 7) {document.getElementById("contArea").innerHTML = '<img src="img/son.png" alt="" />';}; -->
-<!-- </script> -->
 <body>
-<!-- <div class="tl_page_wrap"> -->
-
 <div class="tl_page_wrap">
-
 <div class="tl_page">
-
 <main class="tl_article tl_article_editable">
 <article id="_tl_editor" class="tl_article_content">
 <!-- <script type="text/javascript"> -->
@@ -139,11 +114,10 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 	document.getElementById("datetime").innerHTML = (days[d.getDay()]) + ", " + (d.toLocaleDateString());
 </script>
 
-<p class="snoww hidden-div1">Теперь, при активации режима "не для всех", снежинки скрываются(</p>
-	
 
 
-<script>
+<!-- <p class="snoww hidden-div1">Теперь, при активации режима "не для всех", снежинки скрываются(</p> -->	
+<!--script>
 ////////////////////////
 ///////// Настройки
 ////////////////////////
@@ -253,11 +227,11 @@ for (i=0;i<=snowmax;i++) {
 }
 window.onload=initsnow    
 
-</script>
+</script-->
 
 
 
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+
 <p>Архив за почти прошедший семестр переехал в "5 семестр". Перейти туда можно по ссылке справа, либо, на мобильной версии, открыв спойлер "Главная" и затем открыв второй спойлер - "Прошлые семестры"</p>
 
 <!-- текст, отображаемый на превью ссылки instant view -->
@@ -425,45 +399,12 @@ window.onload=initsnow
 
 
 
-<h4 id="cuim"><a href="#contents">Цифровые устройства и микропроцессоры</a></h4>
-<ul>
-	<li>лектор: Кудрявцев Илья Александрович - <a  target="_blank"  href="mailto:rtf@ssau.ru">rtf@ssau.ru</a> , <a  target="_blank"  href="mailto:iep@ssau.ru">iep@ssau.ru</a></li>
-	<li>семер/лабник: Хорнилин Дмитрий Владимирович - <a  target="_blank"  href="mailto:kornilin@ssau.ru">kornilin@ssau.ru</a></li>
-</ul>
-<details class="details1"><summary>Лабы, программы, moodle etc</summary>
-<ul>
-	<li><a href="https://do.ssau.ru/moodle/enrol/index.php?id=332" target="_blank">наш курс на moodle</a></li>
-	<li><a title="eсли не открывается, попробуйте VPN или переезд в другую страну." href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" target="_blank">Скачать Ltspice</a></li>
-	<li><a href="Vivado.torrent" target="_blank">Скачать Vivado c торрента</a> + <a title="скачать, распаковать в любое место, запустить .exe файл, пару раз нажать на ОК" href="files/Test_uTorrent_1.8.2.zip" target="_blank">portable uTorrent</a> </li>
-	<li class="input hidden-div"><a href="https://disk.yandex.ru/d/G3Q5YhaPqPntTA" target="_blank">Скачать Ltspice c моего яндекс-диска</a></li>
-	<li class="input hidden-div"><a href="http://window.edu.ru/resource/945/46945/files/ssau11.pdf" target="_blank">Какие-то задачки</a></li>
-	<li class="input hidden-div"><a href="https://microtechnics.ru/klyuch-na-bipolyarnom-tranzistore-nagruzochnaya-pryamaya/" target="_blank">Про ключи</a></li>
-	<li class="input hidden-div"><a href="http://repo.ssau.ru/bitstream/Metodicheskie-izdaniya/Elektronnye-kluchi-na-tranzistorah-MOSFET-metod-ukazaniya-k-lab-rabote-Tekst-elektronnyi-87331/1/Кудрявцев%20И.А.%20Электронные%20ключи%20на%20транзисторах%202020.pdf" target="_blank">Методичка по электронным ключам</a></li>
-</ul>
-</details>
-
-<details class="details2"><summary title="которые никто не откроет даже">книжки</summary>
-	<ul>
-		<li><a href="https://biokek.ml/ddam/Liter.png" target="_blank">Cписк от Ильи Александровича</a></li>
-		<li><a href="https://biokek.ml/ddam/Harris_rus.pdf" target="_blank">Харрис(перевод)</a></li>
-		<li><a href="https://biokek.ml/ddam/harris_eng.pdf" target="_blank">Harris(original)</a></li>
-		<li><a href="https://biokek.ml/ddam/opadchiy.pdf" target="_blank">Опадчий_Аналоговая_и_цифровая_ЭЛЕКТРОНИКА</a></li>
-		<li><a href="https://biokek.ml/ddam/ugryumov.zip" target="_blank">Угрюмов Е.П. - Цифровая схемотехника</a></li>
-		<li><a href="https://biokek.ml/ddam/Bezuglov.pdf" target="_blank">Безуглов Д.А., Калиенко И.В. - Цифровые устройства и микропроцессоры </a></li>
-		<li><a href="https://biokek.ml/ddam/brammer.zip" target="_blank">Браммер Ю.А. - Цифровые устройства </a></li>
-	</ul>
-</details>
-
-
-
-
-
 
 <h4 id="aeu"><a href="#contents">Аналоговые электронные устройства</a></h4>
 <ul><li>Родин Дмитрий Владимирович - <a  target="_blank"  href="mailto:rodin@ssau.ru">rodin@ssau.ru</a>, <a href="https://vk.com/write8538835" target="_blank">ВК</a></li>
 <li class="input hidden-div"><a href="https://telegra.ph/aye-05-25">лекции на telegra.ph</a> + <a href="https://biokek.ml/aye.html">тоже самое на сайте</a></li>
 </ul>
-<details class="details1"><summary>прошлый семестр</summary>
+<details open class="details1"><summary>прошлый семестр</summary>
 <ul><li><a href="https://biokek.ml/rodin/Lek.pdf" target="_blank">лекции пдф</a></li></ul>	
 <details class="details2"><summary title="которые никто не откроет даже">книжки</summary>
 	<ul>
