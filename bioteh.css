@@ -1,4 +1,13 @@
-
+.tg {
+  overflow-x: scroll;
+   width: 100%; // замените на требуемое значение
+    overflow-x: scroll;
+    overflow-y: auto;
+  /* white-space: nowrap; */
+-webkit-overflow-scrolling: touch;
+  
+    display: inline-block;
+  }
 
 /* body { */
 	/* background-image: url('img/page.png'); */		
