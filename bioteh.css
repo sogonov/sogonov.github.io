@@ -23,8 +23,8 @@
 }.hidden-div1 {
   display: none;
 }
-.details4 ol{height:200px; width:90%;}
-.details4 ol{overflow:hidden; overflow-y:scroll;}
+.details2 ol{height:200px; width:90%;}
+.details2 ol{overflow:hidden; overflow-y:scroll;}
 #chk {
     position:fixed;
 	bottom: -1px; /*Координата сверху*/
