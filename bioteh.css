@@ -52,6 +52,28 @@
     background: #ccccccb3;
 }
 
+#chk {
+    position:fixed;
+	 top: -5px;
+	bottom: -1px; /*Координата сверху*/
+	/* left: -1px; /*Координата слева*/ 
+	width: 10px;
+    height: 10px;
+    cursor: pointer;
+    background: #ffffff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    left: -5px;
+}
+.dark #chk {
+    background: #191919;
+}
+#chk:checked {
+    background: #ccccccb3;
+}
+
 .checkbox {
     position: absolute;
     display: inline-block;
