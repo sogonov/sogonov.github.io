@@ -17,17 +17,22 @@
 	 /* background-size: 9	0%; */
    /* } */
 
+
+.details2 ol{height:200px; width:90%;}
+.details2 ol{overflow:hidden; overflow-y:scroll;}
+
 /* скрываем что-то от ненужных глаз */
 .hidden-div {
   display: none;
 }.hidden-div1 {
   display: none;
 }
-.details2 ol{height:200px; width:90%;}
-.details2 ol{overflow:hidden; overflow-y:scroll;}
-#chk {
+
+
+
+#chk1 {
     position:fixed;
-	bottom: -1px; /*Координата сверху*/
+	top: 98%; /*Координата сверху*/
 	/* left: -1px; /*Координата слева*/ 
 	width: 10px;
     height: 10px;
@@ -38,14 +43,12 @@
     appearance: none;
     border: none;
     left: -5px;
-    top: -5px;
+    bottom: -1px;
 }
-.dark #chk {
+.dark #chk1 {
     background: #191919;
 }
-
-
-#chk:checked {
+#chk1:checked {
     background: #ccccccb3;
 }
 
@@ -57,6 +60,8 @@
     height: 100px;
     overflow: hidden;
 }
+
+
 
 
 
