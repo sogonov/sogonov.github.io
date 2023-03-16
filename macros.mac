@@ -1,0 +1,8 @@
+Mymac()
+{
+__writeMemory16(100,0x140,"Memory");
+}
+Mymac1()
+{
+__writeMemory16(200,0x142,"Memory");
+}
