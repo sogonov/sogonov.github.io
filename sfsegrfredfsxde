@@ -1,0 +1,52 @@
+﻿#include <MDR32F9Qx_rst_clk.h> 
+#define DELAY(T) for (i = T; i > 0; i--) 
+int i; 
+#define vd3 PORT_Pin_1
+#define btn PORT_Pin_3
+#define prt MDR_PORTE
+#define prt1 MDR_PORTC
+
+int main(){ 
+RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTC, ENABLE); 
+RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTE, ENABLE);
+ 
+PORT_InitTypeDef Nastroyka;
+Nastroyka.PORT_OE = PORT_OE_OUT; 
+Nastroyka.PORT_Pin = (vd3); 
+Nastroyka.PORT_FUNC = PORT_FUNC_PORT; 
+Nastroyka.PORT_MODE = PORT_MODE_DIGITAL; 
+Nastroyka.PORT_SPEED = PORT_SPEED_SLOW; 
+PORT_Init ((prt1), &Nastroyka);
+
+ 
+ //btn
+  
+PORT_InitTypeDef Nastroyka_bb;
+Nastroyka_bb.PORT_Pin = (btn); 
+Nastroyka_bb.PORT_OE = PORT_OE_IN; 
+Nastroyka_bb.PORT_FUNC = PORT_FUNC_PORT; 
+Nastroyka_bb.PORT_MODE = PORT_MODE_DIGITAL; 
+Nastroyka_bb.PORT_SPEED = PORT_SPEED_SLOW; 
+PORT_Init ((prt), &Nastroyka_bb);
+
+
+
+
+PORT_ResetBits((prt1), vd3); 
+DELAY(10000);
+PORT_SetBits((prt1), vd3); 
+DELAY(10000);
+PORT_ResetBits((prt1), vd3);
+ while (1) 
+ { 
+  if (PORT_ReadInputDataBit((prt),(btn))==1)
+  {
+   PORT_SetBits((prt1), (vd3)); 
+  }
+   else
+  {
+   PORT_ResetBits((prt1), vd3); 
+  }
+ 
+ } 
+}
