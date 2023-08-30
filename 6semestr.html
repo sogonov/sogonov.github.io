@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>c днем кудряшного экзамена, господа бакалавры</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link type="text/css" rel="stylesheet" href="bioteh.css?v=10" id="theme-link"/>
+	<meta name="viewport" content="width=device-width">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="MobileOptimized" content="176">
+	<meta name="HandheldFriendly" content="True">
+	<meta property="og:url" content="https://biokek.ml/" />
+	<meta property="og:image" content="https://telegra.ph/file/6e2eeb42bfb8bbc48166b.png" />
+	<link rel="icon" type="image/png" href="img/favicon.png?1" sizes="16x16">
+	<link rel="icon" type="image/png" href="img/favicon.png?1" sizes="32x32">
+</head>
+
+<!-- Информационные сообщения слева страницы -->
+<p id="mess" class="hide-on-mobile">
+
+
+
+
+<!-- <br>15.11 - дедлайн теста "Синтез цифровых устройств с помощью VHDL"<br> -->
+<!-- 22.11 - дедлайн теста "АЦП"<br> -->
+<!-- 29.11 - дедлайн теста " Архитектура микропроцессоров" <br> -->
+<!-- 05.12 - дедлайн теста "Двоичная арифметика" <br> -->
+<!-- 13.12 - дедлайн теста "Индикация" <br> -->
+<!-- 25.12 - дедлайн теста "Микропроцессоры Intel" <br> -->
+<!-- <br>22.11 - дедлайн теста "АЦП"<br> -->
+<!-- Культурология: -->
+<!-- <br>22.10 - последний день регистрации на олимпиаду, 23.10 - последний день для прохождения 1 этапа, инфо - в мессенджере<br><br> -->
+
+<!-- про Буша</strong><br class="inline"> -->
+<!-- контрольная и дедлайн по бушевику 27  -->
+<!-- <br class="inline"> -->
+<!-- будет одна пара в :45 30-го -->
+<!-- <br class="inline"> -->
+<!-- и две пары с с 9:45 9 июня -->
+</p> 
+
+<!-- Календарь(скрипт не мой, взят из просторов интернета) -->
+<table id="calendar2" class="hide-on-mobile">
+  <thead>
+    <tr><td>‹<td colspan="5"><td>>
+    <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+  <tbody>
+</table>
+<script>
+function Calendar2(id, year, month) {
+var Dlast = new Date(year,month+1,0).getDate(),
+    D = new Date(year,month,Dlast),
+    DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay(),
+    DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay(),
+    calendar = '<tr>',
+    month=["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+if (DNfirst != 0) {for(var  i = 1; i < DNfirst; i++) calendar += '<td>';} else{  for(var  i = 0; i < 6; i++) calendar += '<td>';}
+
+for(var  i = 1; i <= Dlast; i++) {
+  if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {calendar += '<td class="today">' + i;}
+  else{calendar += '<td>' + i;}
+  if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {calendar += '<tr>';}
+}
+for(var  i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
+document.querySelector('#'+id+' tbody').innerHTML = calendar;
+document.querySelector('#'+id+' thead td:nth-child(2)').innerHTML = month[D.getMonth()] +' '+ D.getFullYear();
+document.querySelector('#'+id+' thead td:nth-child(2)').dataset.month = D.getMonth();
+document.querySelector('#'+id+' thead td:nth-child(2)').dataset.year = D.getFullYear();
+if (document.querySelectorAll('#'+id+' tbody tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
+    document.querySelector('#'+id+' tbody').innerHTML += '<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;';
+}
+}
+Calendar2("calendar2", new Date().getFullYear(), new Date().getMonth());
+// переключатель минус месяц
+document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(1)').onclick = function() {
+  Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month)-1);
+}
+// переключатель плюс месяц
+document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function() {
+  Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month)+1);
+}
+</script>
+
+<body>
+<div class="tl_page_wrap">
+<div class="tl_page">
+<main class="tl_article tl_article_editable">
+<article id="_tl_editor" class="tl_article_content">
+<!-- <script type="text/javascript"> -->
+<!-- { -->
+<!-- if (screen.width > 480) document.write ('<script type="text/javascript" src="dop.js" ></sc' + 'ript>'); -->
+<!-- } -->
+<!-- </script>	 -->
+<!-- переключение темы -->
+<label class="dark-version">
+    <input type="checkbox" onchange="toggledark()" id="toggledark">
+    <span class="toggledark round"></span>
+</label>
+<script>
+	function toggledark() {
+		if (localStorage.getItem('theme') === 'dark') {localStorage.removeItem('theme');document.body.classList.remove("dark");} 
+		else {localStorage.setItem('theme', 'dark');document.body.classList.add("dark");}}
+	if (localStorage.getItem('theme') === 'dark') {document.body.classList.add('dark');document.getElementById('toggledark').checked = true;}
+	else {document.body.classList.remove('dark');document.getElementById('toggledark').checked = false;}
+</script>
+
+
+<!-- Сегодняшняя дата в заголовок страницы -->
+<h2 id="datetime"></h2>
+<script>
+	var d = new Date();
+	var days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+	document.getElementById("datetime").innerHTML = (days[d.getDay()]) + ", " + (d.toLocaleDateString());
+</script>
+
+
+
+<!-- <p class="snoww hidden-div1">Теперь, при активации режима "не для всех", снежинки скрываются(</p>  -->
+<!--script>
+////////////////////////
+///////// Настройки
+////////////////////////
+ 
+// количество снежинок, которое будет на экране одновременно.
+let snowmax=30
+ 
+// Цвета для снежинок. Для каждой конкретной снежинки цвет выбирается случайно из этого массива.
+// let snowcolor=new Array("#b9dff5","#7fc7ff","#7fb1ff","#7fc7ff","#b9dff5")
+let snowcolor=new Array("#dc143c","#ff4040","#fc2847","#ff033e","#ff2b2b")
+ 
+// Шрифт для снежинок
+let snowtype=new Array("Times")
+ 
+// Символ (*) и есть снежинка, в место нее можно вставить любой другой символ.
+let snowletter="&#9829;"
+//let snowletter="VHDL"
+// let snowletter1="MOV"
+// let snowletter2="JMP"
+// let snowletter3="LEA"
+// let snowletter4="&#1058;&#1058;&#1051;"
+// let snowletter5="ECX"
+// let snowletter6="FPGA"
+//let snowletter=new Array("mov","VHDL","#ТТЛ","#assembly","intel")
+
+ 
+// Скорость движения снежинок (от 0.3 до 2)
+let sinkspeed=0.4
+ 
+// Максимальный размер для снежинок
+let snowmaxsize=40
+ 
+// Минимальный размер для снежинок
+let snowminsize=10
+ 
+// Зона для снежинок
+// 1 для всей страницы, 2 в левой части страницы
+// 3 в центральной части, 4 в правой части страницы
+let snowingzone=1
+ 
+////////////////////////
+///////// Конец настроек
+////////////////////////
+ 
+let snow=new Array();
+let marginbottom;
+let marginright;
+let timer;
+let i_snow=0;
+let x_mv=new Array();
+let crds=new Array();
+let lftrght=new Array();
+function randommaker(range) {
+    rand=Math.floor(range*Math.random());
+    return rand;
+}
+function initsnow() {
+    marginbottom = document.documentElement.clientHeight+50
+    marginright = document.body.clientWidth-15
+    let snowsizerange=snowmaxsize-snowminsize
+    for (i=0;i<=snowmax;i++) {
+        crds[i] = 0;
+        lftrght[i] = Math.random()*15;
+        x_mv[i] = 0.03 + Math.random()/10;
+        snow[i]=document.getElementById("s"+i)
+        snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
+        snow[i].size=randommaker(snowsizerange)+snowminsize
+        snow[i].style.fontSize=snow[i].size+'px';
+        snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
+        snow[i].style.zIndex=1000
+        snow[i].sink=sinkspeed*snow[i].size/5
+        if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+        if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+        if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+        if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+        snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
+        snow[i].style.left=snow[i].posx+'px';
+        snow[i].style.top=snow[i].posy+'px';
+    }
+    movesnow()
+}
+function movesnow() {
+    for (i=0;i<=snowmax;i++) {
+        crds[i] += x_mv[i];
+        snow[i].posy+=snow[i].sink
+        snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i])+'px';
+        snow[i].style.top=snow[i].posy+'px';
+        
+        if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
+            if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+            if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+            if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+            if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+            snow[i].posy=0
+        }
+    }
+    let timer=setTimeout("movesnow()",50)
+}
+ 
+for (i=0;i<=snowmax;i++) {
+    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+    // document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s1"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter1+"</span>")
+    // document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s2"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter2+"</span>")
+    // document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s3"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter3+"</span>")
+    // document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s4"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter4+"</span>")
+    // document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s5"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter5+"</span>")
+    // document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s6"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter6+"</span>")
+}
+window.onload=initsnow    
+
+</script-->
+
+
+
+
+<!-- <p>Архив за прошлый семестр переехал в "5 семестр". Перейти туда можно по ссылке справа, либо, на мобильной версии, открыв спойлер "Главная" и затем открыв второй спойлер - "Прошлые семестры"</p> -->
+
+<!-- текст, отображаемый на превью ссылки instant view -->
+<p hidden class="hide">ссылка на сайт для браузера(можно нажать даже из этого окошка предпросмотра)- https://biokek.ml/ &#8195;&#8195;&#8195;&#8195;&#8195;&#9745;максимально сексуально теперь&#9745;</p>
+
+<!-- <p class="ass" style="font-size: 8pt">в статье появились котики(только для браузера)</p> -->
+<!-- кнопка переключения семестров -->
+<div class="hide-on-mobile">
+	<div id="semestr" class="dropdown">
+		<a href="5semestr.html">5 семестр</a><br>
+		<div class="dropdown-content">  
+			<a href="4semestr.html">4 семестр</a>
+			<a href="3semestr.html">3 семестр</a>
+			<a href="2semestr.html">2 семестр</a>
+			<a href="1semestr.html">1 семестр</a>
+		</div>
+	</div>
+</div>
+
+
+	<!--details class="details2"><summary>Расписание пересдач за 5 семестр</summary>	
+		<p><a href="https://docs.google.com/spreadsheets/u/0/d/1fSNE7eitiIYMXdMalGfStxu0m73nK8aPMoZrtw52VCk/htmlview#">Таблица с расписанием</a></p>
+		<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-w5no{background-color:#ffffff;border-color:#000000;color:#000000;font-family:inherit;text-align:center;vertical-align:middle
+  }
+.tg .tg-r4zc{background-color:#FFF;border-color:#000000;color:#000000;font-family:inherit;text-align:center;vertical-align:middle}
+.tg .tg-bukn{background-color:#FFF;border-color:#000000;color:#000000;font-family:inherit;font-weight:bold;text-align:center;
+  vertical-align:middle}
+</style>
+<table class="tg scrolling-wrapper">
+<thead>
+  <tr>
+    <th class="tg-w5no">Экология</th>
+    <th class="tg-r4zc">Колесниченко Ирина Николаевна</th>
+    <th class="tg-w5no"> </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-r4zc">Измерительные преобразователи и электроды в медицинских&nbsp;&nbsp;&nbsp;приборах</td>
+    <td class="tg-r4zc">Воронов Константин Евгеньевич</td>
+    <td class="tg-r4zc">02.03.2023, 17:00, 424-адм</td>
+  </tr>
+  <tr>
+    <td class="tg-bukn">Метрология, стандартизация и технические измерения</td>
+    <td class="tg-r4zc">Гречишников Владимир&nbsp;&nbsp;&nbsp;Михайлович</td>
+    <td class="tg-r4zc">21.02.2023, 10:00, каф-адм</td>
+  </tr>
+  <tr>
+    <td class="tg-bukn">Аналоговые электронные устройства</td>
+    <td class="tg-r4zc">Родин Дмитрий Владимирович</td>
+    <td class="tg-r4zc">20.02.2023, 13:30, 424-адм</td>
+  </tr>
+  <tr>
+    <td class="tg-bukn">Цифровые устройства и микропроцессоры</td>
+    <td class="tg-r4zc">Кудрявцев Илья Александрович</td>
+    <td class="tg-r4zc">17.02.2023, 15:15, 516а-адм</td>
+  </tr>
+</tbody>
+</table>
+	</details-->
+	
+
+<details class="details1"><summary>Расписания</summary>
+	<p id="rasp"  hidden></p>
+	<figure><img src="rasp6/sessi.png"><figcaption>охохо</figcaption></figure>	
+	<details class="details2"><summary>Расписания на следующие недели</summary>	
+		
+	</details>
+	<details class="details2"><summary>Расписания прошедших недель</summary>	
+		<figure><img src="rasp6/18.png"><figcaption>18</figcaption></figure>		
+		<figure><img src="rasp6/17.png"><figcaption>17</figcaption></figure>		
+		<figure><img src="rasp6/16.png"><figcaption>16</figcaption></figure>	
+		<figure><img src="rasp6/15.png"><figcaption>15</figcaption></figure>			
+		<figure><img src="rasp6/14.png"><figcaption>14</figcaption></figure>			
+		<figure><img src="rasp6/13.png"><figcaption>13</figcaption></figure>
+		<figure><img src="rasp6/12.png"><figcaption>12</figcaption></figure>	
+		<figure><img src="rasp6/11.png"><figcaption>11</figcaption></figure>	
+		<figure><img src="rasp6/10.png?v=22"><figcaption>10</figcaption></figure>
+		<figure><img src="rasp6/9.png?v=22"><figcaption>9</figcaption></figure>	
+		<figure><img src="rasp6/8.png?v=22"><figcaption>8</figcaption></figure>
+		<figure><img src="rasp6/7.png?v=22"><figcaption>7</figcaption></figure>	
+		<figure><img src="rasp6/6.png?v=22"><figcaption>6</figcaption></figure>
+		<figure><img src="rasp6/5.png?v=22"><figcaption>5</figcaption></figure>
+		<figure><img src="rasp6/4.png?v=21"><figcaption>4</figcaption></figure>
+		<figure><img src="rasp6/3.png?v=22"><figcaption>3</figcaption></figure>
+		<figure><img src="rasp6/2.png?v=22"><figcaption>2</figcaption></figure>
+		<figure><img src="rasp6/1.png"><figcaption>1</figcaption></figure>
+	</details> 
+</details>
+
+
+<details id="contents" class="details1"><summary title="старый механизм навигации снова работает - заголовки предметов вернут на оглавление..">Оглавление</summary>
+<span hidden id="Оглавление">Оглавление</span>
+<ol>
+	
+	<li><a href="#cuim">Цифровые устройства и микропроцессоры</a></li>
+	<li><a href="#groom">Узлы и элементы биотехнических систем</a></li>
+	<li><a href="#cuim">Экономика и организация производства</a></li>
+	<li><a href="#shark">Тех. методы диагностических исследований и лечебных воздействий</a></li>
+	<li><a href="#poptika">Опт. методы в биомедицинской инженерии</a></li>
+	<li><a href="#kitpmt">Конструирование и технология производства медицинской техники</a></li>
+	
+</ol>
+</details>
+
+<details class="details1"><summary>Главная</summary>
+ 
+<ul>
+	<li><a href="https://ssau.ru/rasp?groupId=531010832" target="_blank">Актуальное расписание с ssau.ru </a></li>
+	<li><a href="https://cabinet.ssau.ru/" target="_blank">Личный кабинет</a> + <a href="https://cabinet.ssau.ru/messenger" target="_blank">мессенджер вуза</a></li>
+		<li><a href="https://ssau.ru/kampussouth.png" target="_blank">Карта кампуса(площадка аэрокоса)</a> + <a href="https://ssau.ru/kampusnorth.png" target="_blank">Карта кампуса(площадка госа)</a></li>
+	<li><a href="http://lbts.ssau.ru/index.php/ru/" target="_blank">Cайт кафедры ЛБС</a></li>
+	<li style="font-size: 12pt;">если реклама на ютубе отвлекает от лекций- устанавливаем <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=ru" target="_blank">расширение в браузер</a></li>
+	
+	<li class="input hidden-div"><a href="https://drive.google.com/drive/mobile/folders/16wThpkR2TVSMkOyOZFQ0mTnLQJUs3qUd?usp=sharing" target="_blank">Какая-то шняга от Ульяны(точнее старших курсов радиотеха)</a></li>
+	<details id="spisok" class="details2"><summary>Список с вариантами(да, всрато оформлен, мне всё ещё некогда думать)</summary>
+<ol style="padding-left: 20px;">
+<li>Абузов</li>
+<li>Астафьев</li>
+<li>Волков А.</li>
+<li>Волков П.</li>
+<li>Горбачева</li>
+<li>Григорьева</li>
+<li>Гуськова</li>
+<li>Заикин</li>
+<li>Климова</li>
+<li>Клушина</li>
+<li>Краснов</li>
+<li>Кремнев</li>
+<li>Леонтьев</li>
+<li>Мелехин</li>
+<li>Морозов</li>
+<li>Репик</li>
+<li>Риаскос</li>
+<li>Рожновская</li>
+<li>Сальманов</li>
+<li>Сальчихина</li>
+<li>Согонов</li>
+<li>Сокольский</li>
+<li>Сорокина</li>
+<li>Тернавская</li>
+<li>Тимушева</li>
+<li>Третьяков</li>
+<li>Шильников</li>
+</ol>
+</details>
+</ul>
+<pre>В этом семестре у нас 4 экзамена: основы того, чего в нашей стране нет, тех. методы, системно-узловые БТС и микропроцессоры. Еще пара курсачиков. Остальное(оптические методы, грустные трансформаторы, практика) - дифзачёты.</strong></pre>
+
+
+
+<!-- <details class="details2"><summary>Расписание сессии</summary><figure><img src="https://telegra.ph/file/42c52fc0f7f40a5f61dfe.png"></figure></details> -->
+<details class="details2"><summary>Прошлые семестры на telegra.ph</summary>
+<ul>
+	<li><a href="https://telegra.ph/01-01-01-12">1 семестр</a> + <a href="https://telegra.ph/6169-02-22">2 семестр</a></li>
+	<li><a href="https://telegra.ph/6269-09-24">3 семестр</a> + <a href="https://telegra.ph/4sem-04-01">4 семестр</a></li>
+</ul>
+</details>
+<details class="details2"><summary>Прошлые семестры сайтом</summary>
+	<ul>
+		<li><a href="5semestr.html">5 семестр</a> + <a href="6semestr.html">6 семестр</a></li>
+		<li><a href="4semestr.html">4 семестр</a> + <a href="3semestr.html">3 семестр</a></li>
+		<li><a href="2semestr.html">2 семестр</a> + <a href="1semestr.html">1 семестр </a></li>
+	</ul>
+</details>
+</details>
+
+
+<details  class="details1"><summary>Ссылки-на-bbb-лекций</summary>
+<p hidden id="bbb" class="hide"></p>
+<ol dir="auto">
+	<li><a class="tooltip" href="https://bbb.ssau.ru/b/qyr-n2p-qcu" target="_blank">Цифровые устройства и микропроцессоры<!--span><img src="img/sleep3.png"/></span--></a></li>
+	<li><a class="tooltip" href="https://bbb.ssau.ru/b/ctx-wav-hzd" target="_blank">Тех.методы диагностических исследований<!--span><img src="img/sleep5.png"/></span--></a></li>
+	<li><a class="tooltip" href="https://bbb.ssau.ru/b/7wm-n2q-hpf" target="_blank">Узлы и элементы биотехнических систем<!--span><img src="img/sleep5.png"/></span--></a></li>
+	<li><a class="tooltip" href="https://bbb.ssau.ru/b/4aw-gc3-u94" target="_blank">Экономика и организация производства<!--span><img src="img/sleep5.png"/></span--></a></li>
+	<li><a class="tooltip" href="https://bbb.ssau.ru/b/d3p-qpc-qnr" target="_blank">Сухарик <!--span><img src="img/sleep5.png"/></span--></a></li>
+</ol>
+</details>
+
+
+
+
+<details class="details1"><summary>Плейлисты от <a href="https://t.me/Megas_221" target="_blank">Ильи Александровича</a> </summary>
+<p hidden id="plst" class="hide"></p>
+<ol dir="auto">
+	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLdDnPy2Lx9H3ofWal2sym5TSZx0epAqlt" target="_blank">Цифровые устройства и микропроцессоры<!--span><img src="img/sleep3.png"/></span--></a></li>
+	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLdDnPy2Lx9H0N2p73r1mPhhkuxRNjvO_E" target="_blank">Тех.методы диагностических исследований<!--span><img src="img/sleep5.png"/></span--></a></li>
+	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLdDnPy2Lx9H3VlDfTGaosDKhLF3nksXPl" target="_blank">Узлы и элементы биотехнических систем<!--span><img src="img/sleep5.png"/></span--></a></li>
+	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLdDnPy2Lx9H2vb-tGjZT3mm6j4scSzBZ8" target="_blank">Экономика и организация производства<!--span><img src="img/sleep5.png"/></span--></a></li>
+	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLdDnPy2Lx9H3OaaEngrarw1DyJpnPqiq4" target="_blank">Сухарик<!--span><img src="img/sleep5.png"/></span--></a></li>
+</ol>
+</details>
+
+<details class="details1 input hidden-div"><summary>Плейлисты</summary>
+<ol dir="auto">
+	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inZ29wWgnzJ5e7056198holS" target="_blank">Цифровые устройства и микропроцессоры<!--span><img src="img/sleep3.png"/></span--></a></li>
+	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inbubWmUc03ggXYhVXRO2xKC" target="_blank">Тех.методы диагностических исследований<!--span><img src="img/sleep5.png"/></span--></a></li>
+	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5ina2RhN-6lfEzPYcOhn9kerQ" target="_blank">Узлы и элементы биотехнических систем<!--span><img src="img/sleep5.png"/></span--></a></li>
+	<li><a class="tooltip" href="https://www.youtube.com/playlist?list=PLGLpQPCN5inYrGln9CWDFEKS0NgovG-f-" target="_blank">Экономика и организация производства<!--span><img src="img/sleep5.png"/></span--></a></li>
+</ol>
+</details>
+
+<details  class="details1"><summary>Специально для Ярославы</summary>
+	Микропроцессоры:
+	
+<br>12.04 - дедлайн теста "Процессоры Blackfin + <a href="https://boosty.to/sogonov/posts/95a6c5af-314c-4d5c-9de0-088bd3142b51">решение</a>"
+<br>15.04 - дедлайн теста "Протокол MODBUS + <a href="https://boosty.to/sogonov/posts/41c6e90f-a070-4572-a93f-8d3a4b35d45d">решение</a>"
+<br>20.04 - дедлайн теста "Интерфейс CAN + <a href="https://boosty.to/sogonov/posts/6a121ba9-75a1-4a1f-834d-f148074e4b48">решение</a>"
+<br>20.04 - дедлайн теста "Алгоритмы ЦОС"
+</details>
+
+
+
+
+<details  class="details2"><summary>Практика и ВКР</summary>
+	<ul>
+		<li><a href="https://docs.google.com/spreadsheets/d/13wjb-BH9wde8jje95onU5vEefcPrbZgFix1ylyeXH9U/edit#gid=1370068632">редактировать табличку с вкр</a></li>
+	</ul>
+	<details  class="details3"><summary>быстро посмотреть табличку с вкр</summary><iframe style="width:100%;height: 200px;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTaJik-HUGOAsvK0LhtJ1iLpH6RN6g2GEJMEr1SEEgtpZ1tCvaiswHtrIftPzVtZBKClPSTkJkMEZzQ/pubhtml?widget=true&amp;headers=false"></iframe></details>
+	
+	
+	<ul>
+		<li><a href="https://docs.google.com/spreadsheets/d/1ygcYo5B8yVrEJC4IDNeafvalHppvAUSmgYlqM20VWC0/edit#gid=0">редактировать табличку с практикой</a></li>
+	</ul>
+	<details  class="details3"><summary>быстро посмотреть табличку с практикой</summary><iframe style="width:100%;height: 200px;"  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT0FFcE4_PWCn1o1DCV_Cfrd5gzBkS-F5yVGG0Wfq1VUfZKRdSBvy9iNgOwr7rmsI9Eysrc8r7yH6-4/pubhtml?widget=true&amp;headers=false"></iframe></details>
+	
+	
+	
+	
+</details>
+
+
+
+<h4 id="cuim"><a href="#contents">Цифровые устройства и микропроцессоры</a></h4>
+<ul>
+	<li>лектор: Кудрявцев Илья Александрович - <a  target="_blank"  href="mailto:rtf@ssau.ru">rtf@ssau.ru</a> , <a  target="_blank"  href="mailto:iep@ssau.ru">iep@ssau.ru</a></li>
+	<li>семер/лабник: Корнилин Дмитрий Владимирович - <a  target="_blank"  href="mailto:kornilin@ssau.ru">kornilin@ssau.ru</a></li>
+	<li>прошлый семестр - <a  target="_blank"  href="5semestr.html#cuim">тут</a></li>
+</ul>
+<details class="details1"><summary>Лабы, программы, moodle etc</summary>
+<ul>
+
+<li><a href="https://do.ssau.ru/moodle/course/view.php?id=275" target="_blank">наш курс на moodle за 6 семестр</a></li>
+<li class="input hidden-div"><a href="IAR.torrent" target="_blank">iar embedded workbench ide</a></li>
+<li><a href="https://boosty.to/sogonov/posts/dc6d369b-31be-4d77-840a-6bd6c0a9c2e2" target="_blank">установка IAR Embedded Workbench</a></li>
+<li><a href="https://boosty.to/sogonov/posts/44d1d3fe-0a9d-48e0-a5b0-bb48119c91bf">Решение задачи из теста "Архитектура MSP430"</a> </li>
+<li><a href="https://boosty.to/sogonov/posts/8024693d-c019-47f9-a7b5-7f876fe7630a?share=success_publish_link">Решение теста "Периферийные устройства MSP430"</a></li>
+<li><a href="https://boosty.to/sogonov/posts/88055a0a-bfe3-4869-b501-2bd975eaedc0?share=success_publish_link">Решение теста "Микроконтроллеры с архитектурой CORTEX-M3" </a></li>	
+	
+</ul>
+</details>
+
+<details class="details2"><summary title="которые никто не откроет даже">методички</summary>
+	<ul>
+		<li><a href="https://do.ssau.ru/moodle/mod/resource/view.php?id=10503" target="_blank">MSP430 (методические указания) - нужно открывать с мудла</a>
+		<br><a href="https://do.ssau.ru/moodle/mod/resource/view.php?id=10504" target="_blank">Работа с сенсорной клавиатурой - тоже мудл</a>
+		<br><a href="https://do.ssau.ru/moodle/mod/resource/view.php?id=10505" target="_blank" >Работа с ЖК дисплеем - тоже мудл</a></li>
+		<li>1 лаба Cortex  - <a href="http://repo.ssau.ru/bitstream/Metodicheskie-izdaniya/Razrabotka-i-otladka-programm-dlya-mikrokontrollerov-s-yadrom-CortexM3-v-srede-μVision-metod-ukazaniya-Tekst-elektronnyi-85446/1/Кудрявцев%20И.А.%20Разработка%20и%20отладка%20программ%20для%20микроконтроллеров%202020.pdf" target="_blank">2020(с репозитория)</a> + <a href="https://do.ssau.ru/moodle/mod/resource/view.php?id=17898" target="_blank">2019(c мудла)</a></li>
+		<li>2 лаба Cortex - <a href="https://do.ssau.ru/moodle/mod/resource/view.php?id=17899" target="_blank">мудл</a> + <a href="http://repo.ssau.ru/bitstream/Metodicheskie-izdaniya/Rabota-s-periferiei-mikrokontrollerov-s-yadrom-CortexM3-v-srede-μVision-metod-ukazaniya-k-lab-rabote-Tekst-elektronnyi-87355/1/Кудрявцев%20И.А.%20Работа%20с%20периферией%20микроконтроллеров%202020.pdf" target="_blank">репозиторий</a></li>
+		<li class="details1 input hidden-div"><a href="http://repo.ssau.ru/bitstream/Metodicheskie-izdaniya/CMSISRTOS-dlya-mikrokontrollerov-s-yadrom-CortexM3-metod-ukazaniya-k-lab-rabote-Tekst-elektronnyi-87343/1/CMSIS-RTOS%20для%20микроконтроллеров%20с%20ядром%202020.pdf" target="_blank">еще что-то об ARM, но возможно не нужен нам</a></li>
+				
+		<li><a href="https://do.ssau.ru/moodle/mod/resource/view.php?id=45839" target="_blank">Применение БПФ для спектрального анализа (с мудла)</a></li>
+		<li><a href="https://do.ssau.ru/moodle/mod/resource/view.php?id=45838" target="_blank">Практическая разработка цифровых фильтров(с мудла)</a></li>
+
+
+		<li><a href="https://do.ssau.ru/moodle/pluginfile.php/15064/mod_resource/content/2/Guides/USB_guide.pdf" target="_blank">Разработка устройств с интерфейсом USB(с мудла)</a></li>
+		<li><a href="https://do.ssau.ru/moodle/mod/resource/view.php?id=10536" target="_blank">Работа с Ethernet (с мудла)</a></li>
+	</ol>
+</details>
+
+
+</details><details class="details3"><summary>Курсачик </summary>
+	<ul>
+		<li><a href="ddam/Методические%20указания%20для%20курсовой%20работы.pdf" target="_blank">Методичка</a></li>	
+		<li><a href="ddam/Задание%20по%20МПиЦУ_6364_2023.pdf" target="_blank">Задание</a></li>	
+		<li><a href="ddam/Список_группы_6364_2023.pdf" target="_blank">Список группы</a></li>	
+	</ul>
+</details>
+
+
+<h4 id="groom"><a href="#contents">Узлы и элементы биотехнических систем</a></h4>
+<ul>
+<li>Конюхов Вадим Николаевич   - <a  target="_blank"  href="mailto:maverick65@yandex.ru">maverick65@yandex.ru</a></li>
+</ul>
+
+<details class="details1"><summary>Учебники, методички, etc </summary>
+	<ul>
+	
+		<li><a href="https://disk.yandex.ru/d/6bDCV3FYJJeUPA" target="_blank">Основная папка</a></li>
+		<li><a href="https://disk.yandex.ru/d/un55KNISzK1B5Q" target="_blank">Лекции</a></li>
+		
+		
+		<!-- <li><a href="https://youtu.be/Ep3AkOXU9EE?list=LL" target="_blank">Задание на курсовую работу</a></li> -->
+		<!-- <li><a href="https://www.youtube.com/shorts/aIjmybGOmOQ" target="_blank">Для подготовки к первой лабораторной</a></li> -->
+	
+	
+	</ul>
+	
+</details><details class="details2"><summary>Курсачик </summary>
+	<ul>
+	
+		<li><a href="konuhov/Курсовая_по_узлам.pdf" target="_blank">методически</a></li>	
+		<li><a href="konuhov/TASKCURS.pdf" target="_blank">задания</a></li>	
+		<li><a href="https://stepik.org/course/131266" target="_blank">курс по установке оркада</a></li>	
+		<li><a href="https://t.me/sogonov_e" target="_blank">оставить заявку на установку оркада специалистом(от 500 рублей)</a></li>	
+		<li><a href="rsd.html1" target="_blank">сделать курсач за вас</a></li>	
+		
+	</ul>
+	
+</details>
+
+
+
+
+
+<h4 id="econom"><a href="#contents">Экономика и организация производства</a></h4>
+<ul>
+	<li>Глухов Виктор Павлович - <a href="mailto:uchebnik@bk.ru" target="_blank">uchebnik@bk.ru</a></li>
+	<li><a href="https://disk.yandex.ru/d/KnJhBJ1yAJvnCg" target="_blank">Различные материалы</a></li>
+</ul>
+
+<!-- <details class="details2"> -->
+	<!-- <summary></summary> -->
+
+<!-- </details> -->
+
+
+
+<h4 id="shark"><a href="#contents">Тех. методы диагностических исследований и лечебных воздействий</a></h4>
+<ul>
+	<li>лектор: Акулов Сергей Анатольевич - <a href="mailto:sakulov1981@mail.ru" target="_blank">sakulov1981@mail.ru</a></li>
+	<li>семер/лабник: Матвеева Ирина Александровна - <a href="https://vk.com/matveevairena" target="_blank">ВКонтакте</a></li>
+	<li><a href="matveeva/Методические%20указания.pdf" target="_blank">методичка</a> + <a href="https://drive.google.com/drive/folders/1yiaU6hIEGkKdsQ-in3PFVG7i3LZ8SZmO?usp=sharing" target="_blank">исходный google.drive</a></li>
+	
+	<li><a href="https://docs.google.com/spreadsheets/d/1zJZCnxaYKur0oiEPRUZuwvg6jT6Z9P022kN4bBFPLAU/edit?usp=sharing" target="_blank">Таблица с докладами</a></li>
+</ul>
+
+<details  class="details1"><summary>быстро посмотреть табличку</summary><iframe style="width:100%;height: 200px;" src="	https://docs.google.com/spreadsheets/d/e/2PACX-1vTUfQmvBPP17QJWt1Y0O_kZ0AIVr0wLoYCM5uuSZa6jLCZ8a8HTqvjPESXCC2wci_F1vA79IVHsmxtf/pubhtml?widget=true&amp;headers=false"></iframe></details>
+
+
+<!-- <details class="details2"> -->
+	<!-- <summary></summary> -->
+	
+<!-- </details> -->
+
+
+<h4 id="poptika"><a href="#contents">Опт. методы в биомедицинской инженерии</a></h4>
+<ul>
+	<li>лектор/семер: Артемьев Дмитрий Николаевич - <a href="mailto:artemyevdn@ssau.ru" target="_blank">artemyevdn@ssau.ru</a></li>
+	<li>лабник: Комлев Андрей Иванович - <a href="mailto:andrei.komlev@yandex.ru" target="_blank">andrei.komlev@yandex.ru</a></li>
+</ul>
+
+<details class="details1">
+	<summary>Лекции, методички</summary>
+	<ul>
+		<li>Методичка<a href="artemiev/Opticheskie_metody_metodichka_1.pdf" target="_blank"> pdf</a> + <a href="artemiev/Opticheskie_metody_metodichka_1.docx" target="_blank"> docx</a></li>
+	</ul>
+	<ol>
+		<li><a href="artemiev/1_Chto_takoe_svet.pdf" target="_blank">Что такое свет</a></li>
+		<li>
+			<ol>
+				<li><a href="artemiev/2_Light_sources.pdf" target="_blank">Источники света</a></li>
+				<li><a href="artemiev/2_Klassifikaciya_opt_metodov_diagnostiki.pdf" target="_blank">Классификация оптических методов диагностики</a></li>
+			</ol>
+		</li>
+		<li>
+		<ol>
+			<li><a href="artemiev/3_Optics.pdf" target="_blank">Оптические элементы</a></li>
+			<li><a href="artemiev/3_Klassifikaciya_opt_metodov_terapii.pdf" target="_blank">Классификация оптических методов терапии</a></li>
+		</ol>
+		</li>
+		<li><a href="artemiev/4_Detectors.pdf" target="_blank">Детекторы</a></li>
+	</ol>
+	
+</details>
+
+<details class="details1">
+	<summary>Видео для самостоятельного изучения</summary>
+	<ol>
+		<li><a href="https://www.youtube.com/watch?v=WKuaqUkXhWA&t=2389s">Тучин оптическое просветление и т.п</a></li>
+		<li>ОКТ 
+			<ol>
+				<li><a href="https://www.youtube.com/watch?v=HJnNJIUPm4s">основы</a></li>
+				<li>вебинары Торлабс
+				<ol>
+					<li><a href="https://www.youtube.com/watch?v=9yQbzMhLWqI">первый</a></li>
+					<li><a href="https://www.youtube.com/watch?v=QxG-RjHz-_U">вторый</a></li>
+				</ol>
+				</li> 
+			</ol>
+		</li>
+		<li><a href="https://www.youtube.com/watch?v=QX8bMsm74nU">Микроскопия</a></li>
+		<li>Продвинутая микроскопия
+			<ol>
+				<li><a href="https://www.youtube.com/watch?v=XmM6pH2uCIM&t=2713s">первая</a></li>
+				<li><a href="https://www.youtube.com/watch?v=hqk2Qp2xXgs">вторая</a></li>
+			</ol>
+		</li>
+	</ol>
+	
+</details>
+
+
+<h4 id="kitpmt"><a href="#contents">Конструирование и технология производства медицинской техники</a></h4>
+<ul>
+	<li>Сухачев Кирилл Игоревич - <a href="mailto:kir.sukhachev@gmail.com" target="_blank">kir.sukhachev@gmail.com</a></li>
+</ul>
+
+
+<details class="details1">
+	<summary>Материалы</summary>
+<ul>
+	<li><a href="https://disk.yandex.ru/d/cy7A2qpTwBzQmw" target="_blank">Различные книжки</a></li>
+	<li><a href="https://disk.yandex.ru/d/fvszZO_9UQeh-g" target="_blank">Методички в вордовском формате</a></li>
+	<li><a href="sukhach/Методичка%20трансформатор.pdf" target="_blank">Трансформатор(pdf)</a></li>
+	<li><a href="sukhach/Методичка_вибростенд.pdf" target="_blank">Вибростенд(pdf)</a></li>
+	<li><a href="sukhach/МЕТОДИЧКА_колебания%20ПП.pdf" target="_blank">Колебания печатной платы(pdf)</a></li>
+	<li><a href="sukhach/методичка%20расчет%20транзистора.pdf" target="_blank">Расчет транзистора(pdf)</a></li>
+	<li><a href="sukhach/методичка%20тепловой%20расчет.pdf" target="_blank">Тепловой расчёт(pdf)</a></li>
+</ul>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- переключение cкрытых от лишних глаз позиций -->
+<div class="form-group">
+    <div class="form-check">
+        <input type="checkbox"  id="chk1">
+        <label class="form-check-label" for="chk1"></label>
+    </div>
+</div>
+<script>
+document.getElementById('chk1').onclick = function() {
+	if(document.getElementById('chk1').checked) {
+		localStorage.setItem('chk1', "true");
+		const disguise = document.querySelectorAll('.input');
+		// const disguise1 = document.querySelectorAll('.snoww');
+		disguise.forEach((el) => {el.classList.toggle('hidden-div');});
+		// disguise1.forEach((el1) => {el1.classList.toggle('hidden-div1');});
+	} 
+	else {
+		localStorage.setItem('chk1', "false");
+		const disguise = document.querySelectorAll('.input');
+		// const disguise1 = document.querySelectorAll('.snoww');
+		disguise.forEach((el) => {el.classList.toggle('hidden-div');});
+		// disguise1.forEach((el1) => {el1.classList.toggle('hidden-div1');});
+	}
+}
+if (localStorage.getItem('chk1') == "true") {
+	document.getElementById("chk1").setAttribute('checked','checked');
+	const disguise = document.querySelectorAll('.input');
+	// const disguise1 = document.querySelectorAll('.snoww');
+	disguise.forEach((el) => {el.classList.toggle('hidden-div');});
+	// disguise1.forEach((el1) => {el1.classList.toggle('hidden-div1');});
+}
+</script>
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+<ul><li>Создано на базе <a href="https://telegra.ph">telegra.ph</a> </li></ul>
+</article>
+</main>
+</div>
+</div>
+</body>
+</html>
