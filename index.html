@@ -117,8 +117,8 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 
 
 
-<!-- <p class="snoww hidden-div1">Теперь, при активации режима "не для всех", снежинки скрываются(</p>  -->
-<!--script>
+<p class="snoww hidden-div1">Теперь, при активации режима "не для всех", снежинки скрываются(</p> 
+<script>
 ////////////////////////
 ///////// Настройки
 ////////////////////////
@@ -127,29 +127,29 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
 let snowmax=30
  
 // Цвета для снежинок. Для каждой конкретной снежинки цвет выбирается случайно из этого массива.
-// let snowcolor=new Array("#b9dff5","#7fc7ff","#7fb1ff","#7fc7ff","#b9dff5")
-let snowcolor=new Array("#dc143c","#ff4040","#fc2847","#ff033e","#ff2b2b")
+let snowcolor=new Array("#b9dff5","#7fc7ff","#7fb1ff","#7fc7ff","#b9dff5")
+//let snowcolor=new Array("#dc143c","#ff4040","#fc2847","#ff033e","#ff2b2b")
  
 // Шрифт для снежинок
 let snowtype=new Array("Times")
  
 // Символ (*) и есть снежинка, в место нее можно вставить любой другой символ.
-let snowletter="&#9829;"
-//let snowletter="VHDL"
-// let snowletter1="MOV"
-// let snowletter2="JMP"
-// let snowletter3="LEA"
-// let snowletter4="&#1058;&#1058;&#1051;"
-// let snowletter5="ECX"
-// let snowletter6="FPGA"
-//let snowletter=new Array("mov","VHDL","#ТТЛ","#assembly","intel")
+// let snowletter="&#9829;" 
+let snowletter="*"
+ let snowletter1="*"
+ let snowletter2="НИР"
+ let snowletter3="ВКР"
+ let snowletter4="*"
+ let snowletter5="*"
+ let snowletter6="*"
+//let snowletter=new Array("BKP","*","#ТТЛ","#НИР","*")
 
  
 // Скорость движения снежинок (от 0.3 до 2)
 let sinkspeed=0.4
  
 // Максимальный размер для снежинок
-let snowmaxsize=40
+let snowmaxsize=30
  
 // Минимальный размер для снежинок
 let snowminsize=10
@@ -219,17 +219,17 @@ function movesnow() {
 }
  
 for (i=0;i<=snowmax;i++) {
-    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
-    // document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s1"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter1+"</span>")
-    // document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s2"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter2+"</span>")
-    // document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s3"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter3+"</span>")
-    // document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s4"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter4+"</span>")
-    // document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s5"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter5+"</span>")
-    // document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s6"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter6+"</span>")
+    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter +"</span>")
+    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s1"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter1+"</span>")
+    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s2"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter2+"</span>")
+    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s3"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter3+"</span>")
+    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s4"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter4+"</span>")
+    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s5"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter5+"</span>")
+    document.body.insertAdjacentHTML("beforeend", "<span class='snoww' id='s6"+i+"' style='pointer-events:none;user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter6+"</span>")
 }
 window.onload=initsnow    
 
-</script-->
+</script>
 
 
 
@@ -305,12 +305,9 @@ window.onload=initsnow
 
 <details class="details1"><summary>Расписания</summary>
 	<p id="rasp"  hidden></p>
-		<figure><img src="rasp7/15.png?v=2"><figcaption>15</figcaption></figure>
 	<!-- <figure><img src="rasp6/sessi.png"><figcaption>охохо</figcaption></figure>	 -->
-	<details class="details2"><summary>Расписания на следующие недели</summary>	
-		<figure><img src="rasp7/16.png?v=2"><figcaption>16</figcaption></figure>
-		<figure><img src="rasp7/17.png?v=2"><figcaption>17</figcaption></figure>
 		<figure><img src="rasp7/18.png?v=2"><figcaption>18</figcaption></figure>
+	<details class="details2"><summary>Расписания на следующие недели</summary>	
 		<figure><img src="rasp7/20.png?v=2"><figcaption>18</figcaption></figure>
 		<figure><img src="rasp7/21.png?v=2"><figcaption>18</figcaption></figure>
 		<figure><img src="rasp7/22.png?v=2"><figcaption>18</figcaption></figure>
@@ -331,6 +328,9 @@ window.onload=initsnow
 		<figure><img src="rasp7/12.png?v=22"><figcaption>12</figcaption></figure>
 		<figure><img src="rasp7/13.png?v=22"><figcaption>13</figcaption></figure>
 		<figure><img src="rasp7/14.png?v=22"><figcaption>14</figcaption></figure>
+		<figure><img src="rasp7/15.png?v=2"><figcaption>15</figcaption></figure>
+		<figure><img src="rasp7/16.png?v=2"><figcaption>16</figcaption></figure>
+		<figure><img src="rasp7/17.png?v=2"><figcaption>17</figcaption></figure>
 		<!-- <figure><img src="rasp6/18.png"><figcaption>18</figcaption></figure>		 -->
 		<!-- <figure><img src="rasp6/17.png"><figcaption>17</figcaption></figure>		 -->
 		<!-- <figure><img src="rasp6/16.png"><figcaption>16</figcaption></figure>	 -->
@@ -583,24 +583,24 @@ document.getElementById('chk1').onclick = function() {
 	if(document.getElementById('chk1').checked) {
 		localStorage.setItem('chk1', "true");
 		const disguise = document.querySelectorAll('.input');
-		// const disguise1 = document.querySelectorAll('.snoww');
+		const disguise1 = document.querySelectorAll('.snoww');
 		disguise.forEach((el) => {el.classList.toggle('hidden-div');});
-		// disguise1.forEach((el1) => {el1.classList.toggle('hidden-div1');});
+		disguise1.forEach((el1) => {el1.classList.toggle('hidden-div1');});
 	} 
 	else {
 		localStorage.setItem('chk1', "false");
 		const disguise = document.querySelectorAll('.input');
-		// const disguise1 = document.querySelectorAll('.snoww');
+		const disguise1 = document.querySelectorAll('.snoww');
 		disguise.forEach((el) => {el.classList.toggle('hidden-div');});
-		// disguise1.forEach((el1) => {el1.classList.toggle('hidden-div1');});
+		disguise1.forEach((el1) => {el1.classList.toggle('hidden-div1');});
 	}
 }
 if (localStorage.getItem('chk1') == "true") {
 	document.getElementById("chk1").setAttribute('checked','checked');
 	const disguise = document.querySelectorAll('.input');
-	// const disguise1 = document.querySelectorAll('.snoww');
+	const disguise1 = document.querySelectorAll('.snoww');
 	disguise.forEach((el) => {el.classList.toggle('hidden-div');});
-	// disguise1.forEach((el1) => {el1.classList.toggle('hidden-div1');});
+	disguise1.forEach((el1) => {el1.classList.toggle('hidden-div1');});
 }
 </script>
 
