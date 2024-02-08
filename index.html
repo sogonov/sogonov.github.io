@@ -47,7 +47,7 @@
     <tr><td>‹<td colspan="5"><td>>
     <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
   <tbody>
-</table>
+</table> 
 <script>
 function Calendar2(id, year, month) {
 var Dlast = new Date(year,month+1,0).getDate(),
@@ -438,7 +438,7 @@ window.onload=initsnow
 </details>
 
 
-<p style="color: red; font-size:30pt"><a href="https://cabinet.ssau.ru/assets/standard/sto_02068410_004_2019.pdf">СТО сосау для тех кто пишет дипломы</a></p>
+<p id="sto_sosau" ><!-- <!-- style="color: red; <!--font-size:30pt--><a href="https://cabinet.ssau.ru/assets/standard/sto_02068410_004_2019.pdf">СТО сосау для тех кто пишет дипломы</a></p>
 	<!-- </ul> -->
 <!-- </details> -->
 
@@ -534,6 +534,36 @@ if (localStorage.getItem('chk1') == "true") {
 
 
 
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  // Получаем элемент по ID
+  var element = document.getElementById('sto_sosau');
+
+  // Получаем текущую дату
+  var currentDate = new Date();
+  //var currentDate = new Date('2024-07-08');
+//D:1, I:-4, S:1, C:2
+  // Вычисляем количество дней, прошедших с определенной даты
+  // Например, с 1 января 2020 года
+  var startDate = new Date('2024-02-07');
+  var daysPassed = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24))-25;
+
+  // Рассчитываем размер шрифта в зависимости от количества дней
+  var fontSize = 45 + daysPassed; // Начальный размер шрифта + количество прошедших дней
+
+  // Рассчитываем цвет в зависимости от количества дней (от красного к зеленому)
+  var red = 255;
+  var green = 0;
+  var blue = 0;
+  green = Math.min(255, green + daysPassed); // Увеличиваем зеленую составляющую
+  red = Math.max(0, red - daysPassed); // Уменьшаем красную составляющую
+
+  // Устанавливаем новый размер шрифта и цвет
+  element.style.fontSize = fontSize + 'px';
+  element.style.color = 'rgb(' + red + ',' + green + ',' + blue + ')';
+});
+
+</script>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
