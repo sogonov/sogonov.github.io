@@ -308,7 +308,6 @@ window.onload=initsnow
 	<p id="rasp"  hidden></p>
 		<figure><img id="nowwek"src="rasp8/1.png"><figcaption>текущая</figcaption></figure>
 	<details class="details2"><summary>Расписания на следующие недели</summary>
-		<figure><img src="rasp8/6.png"><figcaption>6</figcaption></figure>
 		<figure><img src="rasp8/7.png"><figcaption>7</figcaption></figure>
 		<figure><img src="rasp8/8.png"><figcaption>8</figcaption></figure>
 		<figure><img src="rasp8/9.png"><figcaption>9</figcaption></figure>
@@ -328,6 +327,7 @@ window.onload=initsnow
 		<figure><img src="rasp8/3.png"><figcaption>3</figcaption></figure>
 		<figure><img src="rasp8/4.png"><figcaption>4</figcaption></figure>
 		<figure><img src="rasp8/5.png"><figcaption>5</figcaption></figure>
+		<figure><img src="rasp8/6.png"><figcaption>6</figcaption></figure>
 
 	</details>
 </details>
@@ -571,6 +571,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 // Получаем текущую дату
 
 var currentDate = new Date();
+currentDate.setDate(currentDate.getDate() + 1)
+
 // var currentDate =  new Date('2024-02-08'); 
 
 // Создаем объект для работы с датой
@@ -585,7 +587,7 @@ var diff = currentDate - target;
 
 // Получаем количество прошедших недель
 var oneWeek = 1000 * 60 * 60 * 24 * 7; // количество миллисекунд в одной неделе
-var weekNumber = Math.floor(diff / oneWeek)-5 ; // +1 потому что первая неделя начинается с 1, а не с 0
+var weekNumber = Math.floor((diff) / oneWeek)-5 ; // +1 потому что первая неделя начинается с 1, а не с 0
 
 
 
