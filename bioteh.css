@@ -1,3 +1,16 @@
+
+#countdown {
+    background-color: #e6e6e6; /* серый фон */
+    /* font-style: italic; /* курсив */ 
+    /* padding: 10px; /* добавим отступы для улучшенного вида */ 
+  border: none; /* убираем рамк
+    font-size: 20px; /* размер шрифта */}
+	
+
+.dark #countdown {
+    background-color: #282828; /* серый фон */
+}
+		
 .tg {
   overflow-x: scroll;
    width: 100%; // замените на требуемое значение
@@ -398,7 +411,7 @@ td{
 #mess{ 
  background-color: #e6e6e6;
  position: fixed; 
- top: 260px; /*Координата сверху*/
+ top: 360px; /*Координата сверху*/
  left: 2%; /*Координата слева*/
   width: 240px;
   border-radius: 10px;
@@ -644,3 +657,4 @@ summary:focus {
  }
  .tl_page{
 background-color: #FCFBFB;}
+

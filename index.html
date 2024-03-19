@@ -18,10 +18,14 @@
 </head>
 
 <!-- Информационные сообщения слева страницы -->
+
+
 <p id="mess" class="hide-on-mobile">
+<br>побуду в роли bin ладно<br>
+<br>диплом должен быть загружен в лк в течение 
+<input type="text" id="countdown">
 
-
-
+<br>Еще рано, не переживай)<br>
 
 <!-- <br>15.11 - дедлайн теста "Синтез цифровых устройств с помощью VHDL"<br> -->
 <!-- 22.11 - дедлайн теста "АЦП"<br> -->
@@ -40,6 +44,32 @@
 <!-- <br class="inline"> -->
 <!-- и две пары с с 9:45 9 июня -->
 </p>
+
+
+<script>
+function countdown() {
+    var count = document.getElementById("countdown");
+    var countdownDate = new Date("May 16, 2024 00:00:00").getTime();
+    
+    var now = new Date().getTime();
+    var distance = countdownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    if (distance > 0) {
+        count.value = days + "д " + hours + "ч " + minutes + "м " + seconds + "с";
+        setTimeout(countdown, 1000);
+    } else {
+        count.value = "Время истекло!";
+    }
+}
+
+countdown();
+</script>
+
 
 <!-- Календарь(скрипт не мой, взят из просторов интернета) -->
 <table id="calendar2" class="hide-on-mobile">
@@ -306,7 +336,7 @@ window.onload=initsnow
 
 <details class="details1"><summary>Расписания</summary>
 	<p id="rasp"  hidden></p>
-		<figure><img id="nowwek"src="rasp8/1.png"><figcaption>текущая</figcaption></figure>
+		<figure><img id="nowwek" src="rasp8/1.png"><figcaption>текущая</figcaption></figure>
 	<details class="details2"><summary>Расписания на следующие недели</summary>
 		<figure><img src="rasp8/7.png"><figcaption>7</figcaption></figure>
 		<figure><img src="rasp8/8.png"><figcaption>8</figcaption></figure>
@@ -441,15 +471,14 @@ window.onload=initsnow
 </details>
 
 
-<p id="sto_sosau" ><!-- <!-- style="color: red; <!--font-size:30pt--><a href="https://cabinet.ssau.ru/assets/standard/sto_02068410_004_2019.pdf">СТО сосау для тех кто пишет дипломы</a></p>
-	<!-- </ul> -->
-<!-- </details> -->
+<p id="sto_sosau" ><a href="https://cabinet.ssau.ru/assets/standard/sto_02068410_004_2019.pdf">СТО сосау для тех кто пишет дипломы</a></p>
 
 
 <h4 id="biomedinf"><a href="#contents">Автоматизация обработки биомедицинской информации</a></h4>
 <ul>
 	<li>лектор: Конюхов Вадим Николаевич   - <a  target="_blank"  href="mailto:maverick65@yandex.ru">maverick65@yandex.ru</a></li>
 	<li>лабник: Христофорова Юлия Александровна- <a href="mailto:khristoforova.yua@ssau.ru" target="_blank">khristoforova.yua@ssau.ru</a> + <a href="mailto:khristoforovajulia@gmail.com" target="_blank">khristoforovajulia@gmail.com</a></li>
+<li><a href="https://drive.google.com/drive/folders/1bfFNfm-U98EvEj8soGEkBv1Qw7XE_sJx?usp=sharing" target="_blank">Диск, куда кидать лабы</a> </li>
 </ul>
 <details class="details1"><summary>методички, etc </summary>
 	<ul>
